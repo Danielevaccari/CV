@@ -1,0 +1,15 @@
+.bio {
+    height: 70vh;
+    width : 100vw;
+}
+
+.personal {
+    height: 50%;
+    width: 50%;
+    border-style:solid;
+    border-width: 30px;
+    border-color: rgb(139, 128, 105);
+    border-right-style: none;
+    border-bottom: none;
+    margin-left: 5%;
+}

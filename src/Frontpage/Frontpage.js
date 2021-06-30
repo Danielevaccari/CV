@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import './frontpageStyles.css'
-import Bio from '../Description/Bio';
 import { Paper, Grid, makeStyles, Typography } from '@material-ui/core';
 import Background1 from '../Components/Background1';
 import Background2 from '../Components/Background2';
 import Background3 from '../Components/Background3';
 import Background4 from '../Components/Background4';
 import Background5 from '../Components/Background5';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
     paper: {
@@ -109,11 +109,11 @@ const Frontpage = () => {
                         </Paper>
                     </Grid>
 
-                    <Grid item className={classes.grid} xs={12}>
+                    {/*<Grid item className={classes.grid} xs={12}>
                         <Paper elevation={3} className={classes.description}>
                             TBA
                         </Paper>
-                    </Grid>
+                    </Grid>*/}
 
                 </Grid>
             </>
@@ -123,7 +123,6 @@ const Frontpage = () => {
     return (
         <>
             <div className='frontpage'>
-                <Bio />
                 <div style={{ display: 'flex' }}>
                     <div style={{ flex: '50%', display: 'flex' }}>
                         <Description />
@@ -149,17 +148,17 @@ const Frontpage = () => {
                                 </Paper>
                             </Grid>
 
-                            <Grid item className={classes.grid} xs={12}>
+                            <Grid component={Link} to='cv' item className={classes.grid} xs={12}>
                                 <Paper className={classes.paper}>
                                     <Background3 hovered3={hovered3} changeHovered3={changeHovered3} />
                                 </Paper>
                             </Grid>
 
-                            <Grid item className={classes.grid} xs={12}>
+                            {/*<Grid item className={classes.grid} xs={12}>
                                 <Paper className={classes.paper}>
                                     <Background5 hovered5={hovered5} changeHovered5={changeHovered5} />
                                 </Paper>
-                            </Grid>
+                            </Grid>*/}
                         </Grid>
                     </div>
                 </div>

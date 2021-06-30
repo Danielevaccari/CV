@@ -1,15 +1,40 @@
 .bio {
-    height: 70vh;
-    width : 100vw;
+    background-color: antiquewhite;
+    display: flex;
+}
+
+.left {
+    display        : flex;
+    justify-content: center;
+    flex           : 50%;
+    overflow       : hidden;
+}
+
+.right {
+    flex          : 50%;
+    display       : flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.imgContainer {
+    height         : 300px;
+    width          : 150px;
+    display        : flex;
+    align-items    : flex-end;
+    justify-content: center;
+}
+
+#bioimg {
+    height: 90%;
 }
 
 .personal {
-    height: 50%;
-    width: 50%;
-    border-style:solid;
-    border-width: 30px;
-    border-color: rgb(139, 128, 105);
+    width             : 100%;
+    border-style      : solid;
+    border-width      : 30px;
+    border-color      : rgb(139, 128, 105);
     border-right-style: none;
-    border-bottom: none;
-    margin-left: 5%;
+    border-bottom     : none;
+    margin-left       : 5%;
 }

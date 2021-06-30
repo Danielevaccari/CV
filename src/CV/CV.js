@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import cv from '../Images/cv.pdf'
-import { Document, Page, Stylesheet } from 'react-pdf/dist/esm/entry.webpack'
+import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack'
 import { Button } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
-
+pdfjs.GlobalWorkerOptions.workerSrc = 'pdf.worker.min.js';
 
 const CV = () => {
 

@@ -1,5 +1,6 @@
 .bio {
-    background-color: rgb(255, 131, 131);
+    /*background-color: rgb(255, 131, 131);*/
+    background-color: rgb(211, 180, 146);
     display         : flex;
 }
 
@@ -62,38 +63,45 @@
     display         : flex;
     flex-direction  : column;
     align-items     : center;
-    background-color: antiquewhite;
+    background-color: rgb(224, 224, 224);
     border-radius   : 20px 0px 0px 20px;
-    pointer-events  : none
+    pointer-events  : none;
 }
 
 .infoPaperRight {
     flex            : 50%;
-    background-color: beige;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    background-color: rgb(142, 210, 255);
     border-radius   : 0px 20px 20px 0px;
-    pointer-events  : none
+    pointer-events  : none;
 }
 
 .infoPaperLeftTop {
-    height         : 50%;
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
-    border-radius  : 20px 0px 0px 0px;
+    height          : 50%;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    border-radius   : 20px 0px 0px 0px;
+    background-color: rgb(142, 210, 255);
 }
 
 .infoPaperLeftBottom {
-    background-color: rgb(255, 219, 219);
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    background-color: rgb(142, 210, 255);
     height          : 100%;
     width           : 100%;
     border-radius   : 0px 0px 0px 20px;
-    pointer-events  : none
+    pointer-events  : none;
 }
 
 #bioimg {
     height          : 100%;
     width           : 100%;
-    background-color: rgb(226, 238, 255);
+    background-color: #FFF8DC;
     border-radius   : 10px;
 }
 
@@ -104,7 +112,8 @@
     height          : 100%;
     width           : 100%;
     border-radius   : 20px;
-    background-color: burlywood;
+    background-color: #9e8fb2;
+    background-image: linear-gradient(315deg, rgb(211, 180, 146) 0%, #6978ff 74%);
     font-size       : smaller;
 
 }
@@ -114,13 +123,14 @@ h4 {
 }
 
 h3 {
-    font-size: 100%;
+    font-size: 99%;
 }
 
 h2 {
-    font-size: 100%;
+    font-size: 99%;
 }
 
 h1 {
-    font-size: 100%;
+    font-size: 99%;
 }
+

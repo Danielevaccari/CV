@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './styles.css'
 import mypic from '../Images/mypic.png'
-import { Paper, makeStyles } from '@material-ui/core'
+import { Paper, makeStyles, Typography } from '@material-ui/core'
+
 
 const useStyles = makeStyles({
     paperLittle: {
@@ -12,13 +13,22 @@ const useStyles = makeStyles({
         justifyContent: 'flex-end',
         flexDirection: 'column',
     },
+    paperLittle2: {
+        height: '70%',
+        width: '70%',
+        borderRadius: '10px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#FFF8DC'
+    },
     paperFront: {
         height: '100%',
         width: '100%',
         display: 'flex',
         borderRadius: '20px',
         position: 'absolute',
-        cursor: 'pointer'
+        cursor: 'pointer',
     },
     paperBack: {
         height: '100%',
@@ -29,6 +39,17 @@ const useStyles = makeStyles({
         transform: 'rotateY(180deg)',
         pointerEvents: 'none',
     },
+    typoId: {
+        height: '86%',
+        width: '80%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: '20px',
+        fontSize: '60%',
+        fontFamily: 'Courier New',
+        fontSize: '50%'
+    }
 })
 
 const Bio = () => {
@@ -49,24 +70,30 @@ const Bio = () => {
                         <Paper className={classes.paperFront} elevation={5} onClick={changeRotated}>
                             <div className='infoPaperLeft'>
                                 <div className='infoPaperLeftTop'>
-                                    <Paper className={classes.paperLittle} elevation={10}>
+                                    <Paper className={classes.paperLittle} elevation={4}>
                                         <img id='bioimg' src={mypic} alt='' />
                                     </Paper>
                                 </div>
 
                                 <div className='infoPaperLeftBottom'>
-
+                                    <Paper className={classes.paperLittle2}>
+                                   √
+                                    </Paper>
                                 </div>
                             </div>
 
                             <div className='infoPaperRight'>
-
+                                <Paper elevation={4} className={classes.typoId} style={{ backgroundColor: '#FFF8DC' }}>
+                                    - Male <br /> - 20 v
+                                </Paper>
                             </div>
                         </Paper>
 
                         <Paper className={classes.paperBack} elevation={5} onClick={changeRotated}>
                             <div className='infoPaperBack'>
-                                
+                                <Typography className={classes.typoId} style={{fontSize: '60%'}}>
+                                    Hi !<br />I am the back
+                                </Typography>
                             </div>
                         </Paper>
                     </div>

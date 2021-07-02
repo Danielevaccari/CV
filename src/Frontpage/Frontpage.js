@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     typo: {
         fontFamily: 'Times New Roman, Times, serif',
         margin: '10%',
-        fontSize: '2vh'
+        fontSize: '70%',
     },
     descriptionGrid: {
         display: 'flex',
@@ -31,11 +31,13 @@ const useStyles = makeStyles({
     },
     description: {
         height: '25vh',
-        width: '40vw',
+        width: '60%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         maxWidth: '720px',
+        backgroundColor: '#DEB887',
+        
     }
 })
 

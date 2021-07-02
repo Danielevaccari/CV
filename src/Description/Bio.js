@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './styles.css'
 import mypic from '../Images/mypic.png'
 import { Paper, makeStyles } from '@material-ui/core'
-import { transform } from 'lodash'
 
 const useStyles = makeStyles({
     paperLittle: {
@@ -13,22 +12,37 @@ const useStyles = makeStyles({
         justifyContent: 'flex-end',
         flexDirection: 'column',
     },
-    paper: {
+    paperFront: {
         height: '100%',
         width: '100%',
         display: 'flex',
         borderRadius: '20px',
-        transitionDuration: '1s'
+        position: 'absolute',
     },
-    paperAnimation: {
+    paperFrontAnimation: {
         height: '100%',
         width: '100%',
         display: 'flex',
         borderRadius: '20px',
-        transitionDuration: '1s',
-        transform: 'rotateY(180deg)',
-
-    }
+        position: 'absolute',
+        transform: 'rotateY(180deg)'
+    },
+    paperBack: {
+        height: '100%',
+        width: '100%',
+        display: 'flex',
+        borderRadius: '20px',
+        position: 'absolute',
+    },
+    paperBackAnimation: {
+        height: '100%',
+        width: '100%',
+        display: 'flex',
+        borderRadius: '20px',
+        position: 'absolute',
+        color: 'transparent',
+        transform: 'rotateY(180deg)'
+    },
 })
 
 const Bio = () => {
@@ -45,8 +59,14 @@ const Bio = () => {
         <>
             <div className='bio'>
                 <div className='left'>
-                    <div className='container'>
-                        <Paper className={rotated ? classes.paperAnimation : classes.paper} elevation={10} onClick={changeRotated}>
+                    <div className={rotated ? 'containerAnime' : 'container'}>
+                        <Paper className={classes.paperBack} elevation={5} onClick={changeRotated}>
+                            <div className='infoPaperBack'>
+                                moi
+                            </div>
+                        </Paper>
+
+                        <Paper className={classes.paperFront} elevation={5} onClick={changeRotated}>
                             <div className='infoPaperLeft'>
                                 <div className='infoPaperLeftTop'>
                                     <Paper className={classes.paperLittle} elevation={10}>
@@ -67,12 +87,14 @@ const Bio = () => {
                 </div>
 
                 <div className='right'>
-                    <h2>Hey</h2>
-                    <h4>My name is</h4>
-                    <h1>Daniele Vaccari</h1>
-                    <h3>Check the projects below !</h3>
-                    <h4>danivaccari00@gmail.com</h4>
-                    <h4>+358451764838</h4>
+                    <div className='textContainer'>
+                        <h2>Hey!</h2>
+                        <h4>My name is</h4>
+                        <h1>Daniele Vaccari</h1>
+                        <h3>Check the projects below</h3>
+                        <h4>danivaccari00@gmail.com</h4>
+                        <h4>+358451764838</h4>
+                    </div>
                 </div>
             </div>
         </>

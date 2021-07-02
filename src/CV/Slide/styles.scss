@@ -1,0 +1,63 @@
+.outline {
+    height          : 70vh;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    background-color: rgb(211, 180, 146);
+    position        : relative;
+
+    .slider {
+        height         : 250px;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        left           : 0;
+
+    }
+
+    .containerSlider {
+        position           : absolute;
+        width              : 91vw;
+        height             : 250px;
+        display            : flex;
+        justify-content    : center;
+        align-items        : center;
+        opacity            : 1;
+        transition-duration: 1s;
+        transform          : scale(1.08);
+
+        .paper {
+            height             : 100%;
+            width              : 40%;
+            min-width          : 225px;
+            display            : flex;
+            justify-content    : center;
+            align-items        : center;
+            
+
+        }
+
+        .paper2 {
+            height             : 100%;
+            width              : 40%;
+            min-width          : 225px;
+            display            : flex;
+            justify-content    : center;
+            align-items        : center;
+            transition-duration: 1s;
+            transform          : scale(1.08);
+
+        }
+    }
+
+    .containerSlider2 {
+        position           : absolute;
+        width              : 91vw;
+        height             : 250px;
+        display            : flex;
+        justify-content    : center;
+        align-items        : center;
+        opacity            : 0.3;
+        transition-duration: 1s;
+    }
+}

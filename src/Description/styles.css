@@ -1,40 +1,95 @@
 .bio {
     background-color: antiquewhite;
-    display: flex;
+    display         : flex;
 }
 
 .left {
-    display        : flex;
-    justify-content: center;
-    flex           : 50%;
-    overflow       : hidden;
+    display         : flex;
+    height          : 20vw;
+    min-height      : 150px;
+    min-width       : 150px;
+    justify-content : center;
+    align-items     : center;
+    flex            : 35%;
+    overflow        : hidden;
+    background-color: rgb(226, 238, 255);
+    overflow        : hidden;
+    border-radius: 0px 0px 20px 0px;
 }
 
 .right {
-    flex          : 50%;
+    flex          : 65%;
     display       : flex;
-    justify-content: center;
     flex-direction: column;
+    height        : 100%;
+    padding-top   : 5%;
 }
 
-.imgContainer {
-    height         : 300px;
-    width          : 150px;
+.container {
+    height          : 12vw;
+    width           : 12vw;
+    min-height      : 100px;
+    min-width       : 100px;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    position        : relative;
+    z-index         : 100;
+
+}
+
+.infoPaperLeft {
+    flex            : 50%;
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    background-color: antiquewhite;
+    border-radius   : 20px 0px 0px 20px;
+    pointer-events  : none
+}
+
+.infoPaperRight {
+    flex            : 50%;
+    background-color: beige;
+    border-radius   : 0px 20px 20px 0px;
+    pointer-events  : none
+}
+
+.infoPaperLeftTop {
+    height         : 50%;
     display        : flex;
-    align-items    : flex-end;
     justify-content: center;
+    align-items    : center;
+    border-radius  : 20px 0px 0px 0px;
+}
+
+.infoPaperLeftBottom {
+    background-color: rgb(255, 219, 219);
+    height          : 100%;
+    width           : 100%;
+    border-radius   : 0px 0px 0px 20px;
+    pointer-events  : none
 }
 
 #bioimg {
-    height: 90%;
+    height          : 100%;
+    width           : 100%;
+    background-color: rgb(226, 238, 255);
+    border-radius   : 10px;
 }
 
-.personal {
-    width             : 100%;
-    border-style      : solid;
-    border-width      : 30px;
-    border-color      : rgb(139, 128, 105);
-    border-right-style: none;
-    border-bottom     : none;
-    margin-left       : 5%;
+h4 {
+    font-size: 50%;
+}
+
+h3 {
+    font-size: 100%;
+}
+
+h2 {
+    font-size: 100%;
+}
+
+h1 {
+    font-size: 100%;
 }

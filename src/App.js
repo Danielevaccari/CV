@@ -2,6 +2,7 @@ import Frontpage from "./Frontpage/Frontpage"
 import Bio from "./Description/Bio"
 import CV from "./CV/CV"
 import { HashRouter, Switch, Route } from 'react-router-dom'
+import Slider from "./CV/Slide/Slide"
 
 
 
@@ -12,6 +13,7 @@ function App() {
 
         <Route exact path='/'>
           <Bio />
+          <Slider />
           <Frontpage />
         </Route>
 

@@ -1,11 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
-import { makeStyles } from '@material-ui/core'
 import mypic from '../Images/mypic.png'
+import { Paper, makeStyles } from '@material-ui/core'
+import { transform } from 'lodash'
 
 const useStyles = makeStyles({
-    bioimage: {
-        backgroundImage: '/Users/vaccari/cv/src/Images/IMG_2533-removebg-preview.png'
+    paperLittle: {
+        height: '70%',
+        width: '70%',
+        borderRadius: '10px',
+        display: 'flex',
+        justifyContent: 'flex-end',
+        flexDirection: 'column',
+    },
+    paper: {
+        height: '100%',
+        width: '100%',
+        display: 'flex',
+        borderRadius: '20px',
+        transitionDuration: '1s'
+    },
+    paperAnimation: {
+        height: '100%',
+        width: '100%',
+        display: 'flex',
+        borderRadius: '20px',
+        transitionDuration: '1s',
+        transform: 'rotateY(180deg)',
+
     }
 })
 
@@ -13,18 +35,40 @@ const Bio = () => {
 
     const classes = useStyles()
 
+    const [rotated, setRotated] = useState(false)
+
+    const changeRotated = () => {
+        setRotated(prevRotated => !prevRotated)
+    }
+
     return (
         <>
             <div className='bio'>
                 <div className='left'>
-                    <div className='imgContainer'>
-                        <img id='bioimg' src={mypic} alt='' />
+                    <div className='container'>
+                        <Paper className={rotated ? classes.paperAnimation : classes.paper} elevation={10} onClick={changeRotated}>
+                            <div className='infoPaperLeft'>
+                                <div className='infoPaperLeftTop'>
+                                    <Paper className={classes.paperLittle} elevation={10}>
+                                        <img id='bioimg' src={mypic} alt='' />
+                                    </Paper>
+                                </div>
+
+                                <div className='infoPaperLeftBottom'>
+
+                                </div>
+                            </div>
+
+                            <div className='infoPaperRight'>
+
+                            </div>
+                        </Paper>
                     </div>
                 </div>
 
                 <div className='right'>
                     <h2>Hey</h2>
-                    <h2>My name is</h2>
+                    <h4>My name is</h4>
                     <h1>Daniele Vaccari</h1>
                     <h3>Check the projects below !</h3>
                     <h4>danivaccari00@gmail.com</h4>

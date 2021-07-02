@@ -1,14 +1,21 @@
-body {
+
+html {
   margin: 0;
 }
 
-:root{
+body {
   margin: 0;
+
+}
+
+:root {
+  margin: 0;
+
 }
 
 * {
-  box-sizing: border-box;
-  margin    : 0;
+  margin: 0;
+  padding: 0;
 }
 
 code {

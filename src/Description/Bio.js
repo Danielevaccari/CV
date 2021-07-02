@@ -18,14 +18,7 @@ const useStyles = makeStyles({
         display: 'flex',
         borderRadius: '20px',
         position: 'absolute',
-    },
-    paperFrontAnimation: {
-        height: '100%',
-        width: '100%',
-        display: 'flex',
-        borderRadius: '20px',
-        position: 'absolute',
-        transform: 'rotateY(180deg)'
+        cursor: 'pointer'
     },
     paperBack: {
         height: '100%',
@@ -33,15 +26,8 @@ const useStyles = makeStyles({
         display: 'flex',
         borderRadius: '20px',
         position: 'absolute',
-    },
-    paperBackAnimation: {
-        height: '100%',
-        width: '100%',
-        display: 'flex',
-        borderRadius: '20px',
-        position: 'absolute',
-        color: 'transparent',
-        transform: 'rotateY(180deg)'
+        transform: 'rotateY(180deg)',
+        pointerEvents: 'none',
     },
 })
 
@@ -60,12 +46,6 @@ const Bio = () => {
             <div className='bio'>
                 <div className='left'>
                     <div className={rotated ? 'containerAnime' : 'container'}>
-                        <Paper className={classes.paperBack} elevation={5} onClick={changeRotated}>
-                            <div className='infoPaperBack'>
-                                moi
-                            </div>
-                        </Paper>
-
                         <Paper className={classes.paperFront} elevation={5} onClick={changeRotated}>
                             <div className='infoPaperLeft'>
                                 <div className='infoPaperLeftTop'>
@@ -81,6 +61,12 @@ const Bio = () => {
 
                             <div className='infoPaperRight'>
 
+                            </div>
+                        </Paper>
+
+                        <Paper className={classes.paperBack} elevation={5} onClick={changeRotated}>
+                            <div className='infoPaperBack'>
+                                
                             </div>
                         </Paper>
                     </div>

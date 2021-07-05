@@ -82,7 +82,7 @@ const Platform = () => {
                 >
                     <Paper elevation={10} id='PP' className={classes.platformPaper}>
                         <div className='platformFont3d'>
-toimii
+                            Platform
                         </div>
                     </Paper>
                 </div>

@@ -10,17 +10,22 @@
         height   : 35%;
         width    : 35%;
         min-width: 250px;
+        perspective: 500px;
+        transform-style: preserve-3d;
+        
     }
 
     .platformFont3d {
         display  : flex;
         font-size: 3vw;
-        transform: skewX(-9deg);
+        transform: skewX(-9deg) translateZ(30px);
         color    : transparent;
         position : absolute;
-
+        
+        transform-style: preserve-3d;
+       
         text-shadow:
-            -1px 1px rgb(98, 85, 129),
+            -1px 1px rgb(204, 182, 255),
             -1px 1px rgb(98, 85, 129),
             -1px 1px rgb(98, 85, 129),
             -1px 1px rgb(98, 85, 129);
@@ -28,14 +33,18 @@
 
     .platformFont3d::after {
 
-        content  : 'toimii';
+        content  : 'Platform';
         position : absolute;
-        transform: skewX(-9deg);
-        opacity  : 0.7;
+        left: -10%;
+        top: -10%;
+        transform: skewX(-9deg) translateZ(-30px);
+        font-size: 4vw;
+        opacity  : 0.5;
         z-index  : -1;
+
         text-shadow:
-            -1px -1px 3px rgb(0, 0, 0),
-            -2px -2px 2px rgb(0, 0, 0),
-            -3px -3px 2px rgb(0, 0, 0);
+            0px -1px 3px rgb(0, 0, 0),
+            0px -2px 2px rgb(0, 0, 0),
+            0px -3px 2px rgb(0, 0, 0);
     }
 }

@@ -45,10 +45,12 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        flexDirection: 'column',
         borderRadius: '12px',
-        fontSize: '60%',
+        fontSize: '50%',
+        fontWeight:'bold',
         fontFamily: 'Courier New',
-    
+
     }
 })
 
@@ -77,7 +79,7 @@ const Bio = () => {
 
                                 <div className='infoPaperLeftBottom'>
                                     <Paper className={classes.paperLittle2}>
-                                   √
+                                        √
                                     </Paper>
                                 </div>
                             </div>
@@ -91,8 +93,14 @@ const Bio = () => {
 
                         <Paper className={classes.paperBack} elevation={5} onClick={changeRotated}>
                             <div className='infoPaperBack'>
-                                <Typography className={classes.typoId} style={{fontSize: '60%'}}>
-                                    Hi !<br />I am the back
+                                <Typography className={classes.typoId}>
+                                    <p>
+                                        danivaccari00@gmail.com
+                                    </p>
+                                    <br />
+                                    <p>
+                                        +358451764838
+                                    </p>
                                 </Typography>
                             </div>
                         </Paper>
@@ -105,8 +113,6 @@ const Bio = () => {
                         <h4>My name is</h4>
                         <h1>Daniele Vaccari</h1>
                         <h3>Check the projects below</h3>
-                        <h4>danivaccari00@gmail.com</h4>
-                        <h4>+358451764838</h4>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     paperLittle: {
         height: '70%',
         width: '70%',
-        borderRadius: '10px',
+        borderRadius: '7px',
         display: 'flex',
         justifyContent: 'flex-end',
         flexDirection: 'column',
@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     paperLittle2: {
         height: '70%',
         width: '70%',
-        borderRadius: '10px',
+        borderRadius: '7px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -45,10 +45,10 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: '20px',
+        borderRadius: '12px',
         fontSize: '60%',
         fontFamily: 'Courier New',
-        fontSize: '50%'
+    
     }
 })
 

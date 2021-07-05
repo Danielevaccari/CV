@@ -25,8 +25,6 @@ var data = [{
 
 const Slider = () => {
 
-
-
     const [currentIndex, setCurrentIndex] = useState(0)
     const [progress, setProgress] = useState(0)
 
@@ -52,14 +50,6 @@ const Slider = () => {
                         onClick={nextIndex}
                         style={{ position: 'absolute', right: '7%', transform: 'rotate(180deg)', zIndex: '10' }}
                     />
-
-                    <LinearProgress
-                        variant='determinate'
-                        value={progress}
-                        style={{ backgroundColor: 'lightgrey', width: '20%', height: '2px', position: 'absolute', bottom: '20%' }}
-                        color='primary'
-                    />
-
                     {data.map((element, index) => {
                         return (
                             <>
@@ -74,6 +64,13 @@ const Slider = () => {
                             </>
                         )
                     })}
+                    <LinearProgress
+                        className='sliderProgress'
+                        variant='determinate'
+                        value={progress}
+                        color='primary'
+                    />
+
 
                 </div>
             </div>

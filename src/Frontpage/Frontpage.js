@@ -5,7 +5,7 @@ import Background1 from '../Components/Background1';
 import Background2 from '../Components/Background2';
 import Background3 from '../Components/Background3';
 import Background4 from '../Components/Background4';
-import Background5 from '../Components/Background5';
+//import Background5 from '../Components/Background5';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -65,11 +65,11 @@ const Frontpage = () => {
     const changeHovered4 = () => {
         setHovered4(prevHovered => !prevHovered)
     }
-
+    /*
     const [hovered5, setHovered5] = useState(false)
     const changeHovered5 = () => {
         setHovered5(prevHovered => !prevHovered)
-    }
+    }*/
 
 
     const Description = () => {
@@ -124,7 +124,7 @@ const Frontpage = () => {
 
     return (
         <>
-            <div className='frontpage'>
+            <div id='fP' className='frontpage'>
                 <div style={{ display: 'flex' }}>
                     <div style={{ flex: '50%', display: 'flex' }}>
                         <Description />
@@ -133,7 +133,6 @@ const Frontpage = () => {
                         <Grid container spacing={2}>
                             <Grid item className={classes.grid} xs={12}>
                                 <Paper className={classes.paper}>
-
                                     <Background2 hovered2={hovered2} changeHovered2={changeHovered2} />
                                 </Paper>
                             </Grid>

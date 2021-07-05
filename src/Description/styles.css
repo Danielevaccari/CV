@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .bio {
     /*background-color: rgb(255, 131, 131);*/
     background-color: rgb(211, 180, 146);
@@ -21,16 +23,12 @@
 .right {
     flex            : 65%;
     display         : flex;
-    flex-direction  : column;
-    justify-content : center;
+    align-items     : center;
+    justify-content : flex-start;
     height          : 20vw;
     min-height      : 150px;
     background-color: rgb(140, 138, 255);
     border-radius   : 0px 0px 0px 40%;
-}
-
-.textContainer {
-    margin-left: 5%;
 }
 
 .container {
@@ -118,19 +116,61 @@
 
 }
 
-h4 {
-    font-size: 50%;
-}
-
-h3 {
-    font-size: 99%;
+h1 {
+    font-size: 2vw;
 }
 
 h2 {
-    font-size: 99%;
+    font-size: 2vw;
 }
 
-h1 {
-    font-size: 99%;
+h3 {
+    font-size: 1vw;
 }
 
+h4 {
+    font-size: 1vw;
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Oswald', sans-serif;
+}
+
+.textContainer {
+    display        : flex;
+    justify-content: center;
+    flex-direction : column;
+    margin-left    : 10%;
+    height         : 50%;
+    width          : 60%;
+}
+
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover {
+    color: #bdc4ff;
+}
+
+@media (max-width: 708px) {
+
+    h1 {
+        font-size: 100%;
+    }
+
+    h2 {
+        font-size: 80%;
+    }
+
+    h3 {
+        font-size: 60%;
+    }
+
+    h4 {
+        font-size: 40%;
+    }
+}

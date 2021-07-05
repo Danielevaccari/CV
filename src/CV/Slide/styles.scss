@@ -19,12 +19,16 @@
         position           : absolute;
         width              : 91vw;
         height             : 250px;
+        @media (max-height: 475px){
+            height: 150px;
+        }
         display            : flex;
         justify-content    : center;
         align-items        : center;
         opacity            : 1;
         transition-duration: 1s;
         transform          : scale(1.08);
+
 
         .paper {
             height         : 100%;
@@ -60,4 +64,25 @@
         opacity            : 0.3;
         transition-duration: 1s;
     }
+
+    .sliderProgress {
+        background-color: lightgrey;
+        width           : 20%;
+        height          : 2px;
+        position        : absolute;
+        bottom          : 15%;
+    }
+
+    @media (max-height: 600px) {
+        .sliderProgress {
+            background-color: lightgrey;
+            width           : 20%;
+            height          : 2px;
+            position        : absolute;
+            bottom          : 4%;
+        }
+    }
+
+
+
 }

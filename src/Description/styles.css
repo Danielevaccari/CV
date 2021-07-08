@@ -18,6 +18,7 @@
     background-color: rgb(140, 138, 255);
     overflow        : hidden;
     border-radius   : 0px 0px 40% 0px;
+    perspective     : 500px;
 }
 
 .right {

@@ -1,21 +1,21 @@
 .wallsProjects {
-    height          : 25vh;
-    border-radius   : 20px;
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
-    background-color: rgb(224, 224, 224);
+    height             : 25vh;
+    border-radius      : 20px;
+    display            : flex;
+    justify-content    : center;
+    align-items        : center;
+    background-color   : rgb(224, 224, 224);
     transition-duration: 0.5s;
 }
 
 .walls2 {
-    height          : 25vh;
-    border-radius   : 20px;
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
-    background-color: rgb(148, 148, 148);
-    transform: scale(1.08);
+    height             : 25vh;
+    border-radius      : 20px;
+    display            : flex;
+    justify-content    : center;
+    align-items        : center;
+    background-color   : rgb(148, 148, 148);
+    transform          : scale(1.08);
     transition-duration: 0.5s;
 }
 
@@ -172,4 +172,12 @@
     -webkit-text-fill-color: transparent;
     background-size        : cover;
     -webkit-background-clip: text;
+}
+
+.reduxTodo {
+    height         : 100%;
+    width          : 100%;
+    background     : url('https://api.iconify.design/simple-icons:redux.svg') no-repeat center center / contain;
+    background-size: 50% 50%;
+    color          : rebeccapurple;
 }

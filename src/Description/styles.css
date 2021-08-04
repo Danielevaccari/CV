@@ -79,6 +79,7 @@
 
 .infoPaperLeftTop {
     height          : 50%;
+    width           : 100%;
     display         : flex;
     justify-content : center;
     align-items     : center;
@@ -113,8 +114,14 @@
     border-radius   : 20px;
     background-color: #9e8fb2;
     background-image: linear-gradient(315deg, rgb(211, 180, 146) 0%, #6978ff 74%);
-    font-size       : smaller;
+    color           : transparent;
 
+}
+
+@media(min-width: 1024px) {
+    .infoPaperBack {
+        font-size: 1rem;
+    }
 }
 
 h1 {

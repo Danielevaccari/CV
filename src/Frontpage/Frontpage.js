@@ -6,6 +6,7 @@ import Background2 from '../Components/Background2';
 import Background3 from '../Components/Background3';
 import Background4 from '../Components/Background4';
 import Background5 from '../Components/Background5';
+import Background6 from '../Components/Background6';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -21,7 +22,7 @@ const useStyles = makeStyles({
     typo: {
         fontFamily: 'Times New Roman, Times, serif',
         margin: '10%',
-        fontSize: '70%',
+        fontSize: '0.6rem',
     },
     descriptionGrid: {
         display: 'flex',
@@ -71,6 +72,11 @@ const Frontpage = () => {
         setHovered5(prevHovered => !prevHovered)
     }
 
+    const [hovered6, setHovered6] = useState(false)
+    const changeHovered6 = () => {
+        setHovered6(prevHovered => !prevHovered)
+    }
+
 
     const Description = () => {
 
@@ -83,6 +89,14 @@ const Frontpage = () => {
                         <Paper elevation={3} className={classes.description}>
                             <Typography className={classes.typo}>
                                 E-commerce made with JSX, commerce.js and Material UI
+                            </Typography>
+                        </Paper>
+                    </Grid>
+
+                    <Grid item className={classes.grid} xs={12}>
+                        <Paper elevation={3} className={classes.description}>
+                            <Typography className={classes.typo}>
+                                A rulebook made for the card game Magic the Gathering. It fetches data from an express server and fetches it dynamically.
                             </Typography>
                         </Paper>
                     </Grid>
@@ -136,6 +150,12 @@ const Frontpage = () => {
                             <Grid item className={classes.grid} xs={12}>
                                 <Paper className={classes.paper}>
                                     <Background2 hovered2={hovered2} changeHovered2={changeHovered2} />
+                                </Paper>
+                            </Grid>
+
+                            <Grid item className={classes.grid} xs={12}>
+                                <Paper className={classes.paper}>
+                                    <Background6 hovered6={hovered6} changeHovered6={changeHovered6} />
                                 </Paper>
                             </Grid>
 

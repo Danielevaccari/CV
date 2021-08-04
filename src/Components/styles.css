@@ -181,3 +181,14 @@
     background-size: 50% 50%;
     color          : rebeccapurple;
 }
+
+.magicTheGathering {
+    height         : 100%;
+    width          : 100%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    font-family    : fantasy;
+    font-size      : 2vw;
+    color: rgb(86, 55, 99);
+}

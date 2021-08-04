@@ -94,13 +94,13 @@ const Bio = () => {
                         <Paper className={classes.paperBack} elevation={5} onClick={changeRotated}>
                             <div className='infoPaperBack'>
                                 <Typography className={classes.typoId}>
-                                    <p>
+                                    <span>
                                         danivaccari00@gmail.com
-                                    </p>
+                                    </span>
                                     <br />
-                                    <p>
+                                    <span>
                                         +358451764838
-                                    </p>
+                                    </span>
                                 </Typography>
                             </div>
                         </Paper>

@@ -11,6 +11,7 @@ html, body {
   box-sizing: border-box;
   margin    : 0%;
   scrollbar-width: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 code {

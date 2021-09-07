@@ -1,12 +1,14 @@
 import React from 'react'
+import xosvg from '../Images/xoSvg.svg'
+import './styles.css'
 
-const Background4 = ({ hovered4, changeHovered4 }) => {
+const Background4 = () => {
     return (
         <>
-            <a onMouseOver={changeHovered4} onMouseOut={changeHovered4} href='https://Danielevaccari.github.io/asylum'>
-                <div className={hovered4 ? 'walls2' : 'wallsProjects'}>
+            <a href='https://Danielevaccari.github.io/asylum'>
+                <div className='wallsProjects'>
                     <div className='tictactoe'>
-                        XO
+                        <img className='frontpageSvg' src={xosvg} alt=''></img>
                     </div>
                 </div>
             </a>

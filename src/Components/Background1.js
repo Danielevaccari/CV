@@ -1,12 +1,12 @@
 
 import './styles.css'
 
-const Background1 = ({ changeHovered1, hovered1 }) => {
+const Background1 = () => {
 
     return (
         <>
-            <a onMouseOver={changeHovered1} onMouseOut={changeHovered1} href='https://Danielevaccari.github.io/conference'>
-                <div className={hovered1 ? 'walls2' : 'wallsProjects'}>
+            <a href='https://Danielevaccari.github.io/conference'>
+                <div className='wallsProjects'>
                     <div className='inside'>
                         CSS
                     </div>

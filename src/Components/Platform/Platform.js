@@ -10,8 +10,8 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         alignItems: 'center',
         pointerEvents: 'none',
-        backgroundColor: '#ffcfdf',
-        backgroundImage: 'linear-gradient(315deg, #f9cfff 20%, #b0f9f9 70%)',
+        backgroundColor: 'transparent',
+        backgroundImage: 'linear-gradient(to right top, rgba(255,255,255,0.9) , rgba(255,255,255,0.1))',
         borderRadius: '20px'
     }
 })
@@ -71,6 +71,7 @@ const Platform = () => {
     return (
         <>
             <div id='wP' className='wallsPlatform'>
+
                 <div
                     id='pC'
                     className='platformContainer'

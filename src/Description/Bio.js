@@ -29,6 +29,7 @@ const useStyles = makeStyles({
         borderRadius: '20px',
         position: 'absolute',
         cursor: 'pointer',
+        background: 'transparent'
     },
     paperBack: {
         height: '100%',

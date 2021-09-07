@@ -52,16 +52,14 @@ const Slider = () => {
                     />
                     {data.map((element, index) => {
                         return (
-                            <>
-                                <div className={currentIndex === index ? 'containerSlider' : 'containerSlider2'}>
-                                    {currentIndex === index && <Paper
-                                        elevation={5}
-                                        className='paper'
-                                    >
-                                        <img src={element.img} alt='dv' style={{ height: '100%', width: '100%' }}></img>
-                                    </Paper>}
-                                </div>
-                            </>
+                            <div key={index} className={currentIndex === index ? 'containerSlider' : 'containerSlider2'}>
+                                {currentIndex === index && <Paper
+                                    elevation={5}
+                                    className='paper'
+                                >
+                                    <img src={element.img} alt='dv' style={{ height: '100%', width: '100%' }}></img>
+                                </Paper>}
+                            </div>
                         )
                     })}
                     <LinearProgress

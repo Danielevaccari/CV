@@ -3,7 +3,7 @@
     display        : flex;
     justify-content: center;
     align-items    : center;
-    background     : linear-gradient(rgb(211, 180, 146), rgb(247, 242, 236));
+    background-color:cornflowerblue;
     position       : relative;
 
     .slider {
@@ -16,12 +16,14 @@
     }
 
     .containerSlider {
-        position           : absolute;
-        width              : 91vw;
-        height             : 250px;
-        @media (max-height: 475px){
+        position: absolute;
+        width   : 91vw;
+        height  : 250px;
+
+        @media (max-height: 475px) {
             height: 150px;
         }
+
         display            : flex;
         justify-content    : center;
         align-items        : center;

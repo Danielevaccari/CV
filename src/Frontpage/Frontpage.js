@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './frontpageStyles.css'
 import { Paper, Grid, makeStyles, Typography } from '@material-ui/core';
 import Background1 from '../Components/Background1';
@@ -7,12 +7,11 @@ import Background3 from '../Components/Background3';
 import Background4 from '../Components/Background4';
 import Background5 from '../Components/Background5';
 import Background6 from '../Components/Background6';
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
     paper: {
         borderRadius: '20px',
-        width: '70%',
+        width: '70%'
     },
     grid: {
         display: 'flex',
@@ -37,7 +36,8 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         alignItems: 'center',
         maxWidth: '720px',
-        backgroundColor: '#DEB887',
+        borderRadius: '8px',
+        background: 'linear-gradient(to right top, rgb(255,255,255) , rgba(255,255,255,0.5))'
 
     }
 })
@@ -47,37 +47,6 @@ const Frontpage = () => {
 
     const classes = useStyles()
 
-    const [hovered1, setHovered1] = useState(false)
-    const changeHovered1 = () => {
-        setHovered1(prevHovered => !prevHovered)
-    }
-
-    const [hovered2, setHovered2] = useState(false)
-    const changeHovered2 = () => {
-        setHovered2(prevHovered => !prevHovered)
-    }
-
-    const [hovered3, setHovered3] = useState(false)
-    const changeHovered3 = () => {
-        setHovered3(prevHovered => !prevHovered)
-    }
-
-    const [hovered4, setHovered4] = useState(false)
-    const changeHovered4 = () => {
-        setHovered4(prevHovered => !prevHovered)
-    }
-
-    const [hovered5, setHovered5] = useState(false)
-    const changeHovered5 = () => {
-        setHovered5(prevHovered => !prevHovered)
-    }
-
-    const [hovered6, setHovered6] = useState(false)
-    const changeHovered6 = () => {
-        setHovered6(prevHovered => !prevHovered)
-    }
-
-
     const Description = () => {
 
         const classes = useStyles()
@@ -86,51 +55,51 @@ const Frontpage = () => {
             <>
                 <Grid className={classes.descriptionGrid} container spacing={2}>
                     <Grid item className={classes.grid} xs={12}>
-                        <Paper elevation={3} className={classes.description}>
+                        <div className='description'>
                             <Typography className={classes.typo}>
                                 E-commerce made with JSX, commerce.js and Material UI
                             </Typography>
-                        </Paper>
+                        </div>
                     </Grid>
 
                     <Grid item className={classes.grid} xs={12}>
-                        <Paper elevation={3} className={classes.description}>
+                        <div className='description'>
                             <Typography className={classes.typo}>
-                                A rulebook made for the card game Magic the Gathering. It fetches data from an express server and fetches it dynamically.
+                                A rulebook made for the card game Magic the Gathering. Created in Next.js environment and uses Next.js api to fetch data.
                             </Typography>
-                        </Paper>
+                        </div>
                     </Grid>
 
                     <Grid item className={classes.grid} xs={12}>
-                        <Paper elevation={3} className={classes.description}>
+                        <div className='description'>
                             <Typography className={classes.typo}>
                                 Cool stuff made with CSS
                             </Typography>
-                        </Paper>
+                        </div>
                     </Grid>
 
                     <Grid item className={classes.grid} xs={12}>
-                        <Paper elevation={3} className={classes.description}>
+                        <div className='description'>
                             <Typography className={classes.typo}>
                                 Tictactoe game
                             </Typography>
-                        </Paper>
+                        </div>
                     </Grid>
 
                     <Grid item className={classes.grid} xs={12}>
-                        <Paper elevation={3} className={classes.description}>
+                        <div className='description'>
                             <Typography className={classes.typo}>
                                 My CV
                             </Typography>
-                        </Paper>
+                        </div>
                     </Grid>
 
                     <Grid item className={classes.grid} xs={12}>
-                        <Paper elevation={3} className={classes.description}>
+                        <div className='description'>
                             <Typography className={classes.typo}>
                                 To Do List made with Redux
                             </Typography>
-                        </Paper>
+                        </div>
                     </Grid>
 
                 </Grid>
@@ -149,37 +118,37 @@ const Frontpage = () => {
                         <Grid container spacing={2}>
                             <Grid item className={classes.grid} xs={12}>
                                 <Paper className={classes.paper}>
-                                    <Background2 hovered2={hovered2} changeHovered2={changeHovered2} />
+                                    <Background2 />
                                 </Paper>
                             </Grid>
 
                             <Grid item className={classes.grid} xs={12}>
                                 <Paper className={classes.paper}>
-                                    <Background6 hovered6={hovered6} changeHovered6={changeHovered6} />
+                                    <Background6 />
                                 </Paper>
                             </Grid>
 
                             <Grid item className={classes.grid} xs={12}>
                                 <Paper className={classes.paper}>
-                                    <Background1 hovered1={hovered1} changeHovered1={changeHovered1} />
+                                    <Background1 />
                                 </Paper>
                             </Grid>
 
                             <Grid item className={classes.grid} xs={12}>
                                 <Paper className={classes.paper}>
-                                    <Background4 hovered4={hovered4} changeHovered4={changeHovered4} />
-                                </Paper>
-                            </Grid>
-
-                            <Grid component={Link} to='cv' item className={classes.grid} xs={12}>
-                                <Paper className={classes.paper}>
-                                    <Background3 hovered3={hovered3} changeHovered3={changeHovered3} />
+                                    <Background4 />
                                 </Paper>
                             </Grid>
 
                             <Grid item className={classes.grid} xs={12}>
                                 <Paper className={classes.paper}>
-                                    <Background5 hovered5={hovered5} changeHovered5={changeHovered5} />
+                                    <Background3 />
+                                </Paper>
+                            </Grid>
+
+                            <Grid item className={classes.grid} xs={12}>
+                                <Paper className={classes.paper}>
+                                    <Background5 />
                                 </Paper>
                             </Grid>
                         </Grid>

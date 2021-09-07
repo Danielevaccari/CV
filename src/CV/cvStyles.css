@@ -1,0 +1,38 @@
+.cvWalls {
+    height          : 100vh;
+    width           : 100vw;
+    background-color: antiquewhite;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    flex-direction  : column;
+}
+
+.cvContainer {
+    height         : 80vh;
+    width          : 90vw;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+}
+
+.paper {
+    display            : flex;
+    justify-content    : center;
+    align-items        : center;
+    height             : 90%;
+    background         : linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+    border-radius      : 5px;
+    transition-duration: 0.5s;
+}
+
+.paper:hover {
+    transform          : scale(1.08);
+    transition-duration: 0.5s;
+}
+
+.cvPdfSvg {
+    height: 100%;
+    width : 100%;
+}

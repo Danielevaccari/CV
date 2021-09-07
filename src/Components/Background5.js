@@ -1,10 +1,11 @@
 import React from 'react'
+import './styles.css'
 
-const Background5 = ({ hovered5, changeHovered5 }) => {
+const Background5 = () => {
     return (
         <>
-            <a onMouseOver={changeHovered5} onMouseOut={changeHovered5} href='https://todolistreduxreact.netlify.app/'>
-                <div className={hovered5 ? 'walls2' : 'wallsProjects'}>
+            <a href='https://todolistreduxreact.netlify.app/'>
+                <div className='wallsProjects'>
                     <div className='reduxTodo'>
 
                     </div>

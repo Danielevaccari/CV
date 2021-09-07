@@ -4,16 +4,11 @@
     display            : flex;
     justify-content    : center;
     align-items        : center;
-    background-color   : rgb(224, 224, 224);
+    background-color   : rgb(221, 221, 221);
     transition-duration: 0.5s;
 }
 
-.walls2 {
-    height             : 25vh;
-    border-radius      : 20px;
-    display            : flex;
-    justify-content    : center;
-    align-items        : center;
+.wallsProjects:hover {
     background-color   : rgb(148, 148, 148);
     transform          : scale(1.08);
     transition-duration: 0.5s;
@@ -69,87 +64,6 @@
 
 /*background2*/
 
-.real {
-    position       : absolute;
-    font-size      : 4vw;
-    display        : flex;
-    justify-content: center;
-    color          : transparent;
-    align-items    : center;
-    transform      : skewY(-10deg);
-    text-shadow    :
-
-        1px -1px 10px rgba(255, 255, 255, 0.4),
-        0px -1px 10px rgba(255, 255, 255, 0.4),
-        -1px -1px 10px rgba(255, 255, 255, 0.4),
-        0px -2px 3px #fff,
-        -1px -2px 3px #fff,
-        -2px -2px 3px #fff,
-        -1px -3px 2px #ddd,
-        -2px -3px 2px #ddd,
-        -3px -3px 2px #ddd,
-        -2px -4px 2px #fff,
-        -3px -4px 2px #fff,
-        -4px -4px 2px #fff,
-        -3px -5px 1px #fff,
-        -4px -5px 1px #fff,
-        -5px -5px 1px #fff,
-
-
-        0px -2px 3px #fff,
-        -1px -2px 3px #fff,
-        -2px -2px 3px #fff,
-        -1px -3px 2px #ddd,
-        -2px -3px 2px #ddd,
-        -3px -3px 2px #ddd,
-        -2px -4px 2px #fff,
-        -3px -4px 2px #fff,
-        -4px -4px 2px #fff,
-        -3px -5px 1px #fff,
-        -4px -5px 1px #fff,
-        -5px -5px 1px #fff,
-
-        0px -2px 3px #fff,
-        -1px -2px 3px #fff,
-        -2px -2px 3px #fff,
-        -1px -3px 2px #ddd,
-        -2px -3px 2px #ddd,
-        -3px -3px 2px #ddd,
-        -2px -4px 2px #fff,
-        -3px -4px 2px #fff,
-        -4px -4px 2px #fff,
-        -3px -5px 1px #fff,
-        -4px -5px 1px #fff,
-        -5px -5px 1px #fff,
-
-        0px -2px 3px #fff,
-        -1px -2px 3px #fff,
-        -2px -2px 3px #fff,
-        -1px -3px 2px #ddd,
-        -2px -3px 2px #ddd,
-        -3px -3px 2px #ddd,
-        -2px -4px 2px #fff,
-        -3px -4px 2px #fff,
-        -4px -4px 2px #fff,
-        -3px -5px 1px #fff,
-        -4px -5px 1px #fff,
-        -5px -5px 1px #fff;
-}
-
-.real::before {
-    position        : absolute;
-    content         : "Clothing INC™";
-    transform       : skewX(30deg);
-    transform-origin: bottom left;
-    z-index         : -1;
-    color           : transparent;
-    text-shadow     :
-        15px 0px 20px rgba(0, 0, 0, 0.25),
-        15px 0px 25px rgba(0, 0, 0, 0.2),
-        15px 0px 35px rgba(0, 0, 0, 0.15),
-        15px 0px 45px rgba(0, 0, 0, 0.1);
-}
-
 /*background3*/
 
 .cvFont {
@@ -161,17 +75,6 @@
         2px 0px 1px rgb(4, 0, 255),
         0px 2px 1px rgb(60, 255, 0),
         0px -2px 1px rgb(238, 255, 1);
-}
-
-/* Background4*/
-
-.tictactoe {
-    font-size              : 7vw;
-    position               : absolute;
-    background-image       : url('../Images/wood-background-realistic_107791-102.jpeg');
-    -webkit-text-fill-color: transparent;
-    background-size        : cover;
-    -webkit-background-clip: text;
 }
 
 .reduxTodo {
@@ -188,7 +91,15 @@
     display        : flex;
     justify-content: center;
     align-items    : center;
-    font-family    : fantasy;
-    font-size      : 2vw;
-    color: rgb(86, 55, 99);
+}
+
+.frontpageSvg {
+    height: 70px;
+    width : 70px;
+
+}
+
+.hyperlink {
+    height: 100%;
+    width : 100%;
 }

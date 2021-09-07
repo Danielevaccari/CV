@@ -1,15 +1,18 @@
 import React from 'react'
+import './styles.css'
+import { Link } from 'react-router-dom';
+import cvsvg from '../Images/cv.svg'
 
-const Background3 = ({ hovered3, changeHovered3 }) => {
+const Background3 = () => {
     return (
         <>
-            <div onMouseOver={changeHovered3} onMouseOut={changeHovered3} href='/#'>
-                <div className={hovered3 ? 'walls2' : 'wallsProjects'}>
+            <Link to='/cv'>
+                <div className='wallsProjects'>
                     <div className='cvFont'>
-                        CV
+                        <img className='frontpageSvg' src={cvsvg} alt=''></img>
                     </div>
                 </div>
-            </div>
+            </Link>
         </>
     )
 }

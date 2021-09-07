@@ -1,0 +1,59 @@
+.wallsInfoList {
+    height           : 75vh;
+    width            : 100vw;
+    background-image : url(../../Images/gjgj.png);
+    background-repeat: no-repeat;
+    background-size  : 100% 100%;
+    display          : flex;
+    justify-content  : center;
+    align-items      : center;
+    background-image : url(../../Images/Animated\ Shape.svg);
+}
+
+.icyContainer {
+    height         : 60%;
+    width          : 90%;
+    background     : linear-gradient(to right top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    border-radius  : 10px;
+    backdrop-filter: blur(15px);
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    flex-direction : column;
+}
+
+.icyContainer:hover {
+    background: linear-gradient(to right top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
+}
+
+.svg {
+    height: 70px;
+    width : 70px;
+}
+
+.svg:hover {
+    transform: scale(1.08);
+}
+
+.gridItem {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+@media (min-width:426px) {
+    .icyContainer {
+        width: 45%;
+    }
+}
+
+@media (max-width:426px) {
+    .wallsInfoList {
+        background-image: url(../../Images/Animated\ Shape-mobile.svg);
+    }
+
+    .svg {
+        height: 45px;
+        width : 45px;
+    }
+}

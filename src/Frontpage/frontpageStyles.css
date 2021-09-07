@@ -1,6 +1,17 @@
-.frontpage{
-    background-color: rgb(247, 242, 236);
+.frontpage {
+    background    : linear-gradient(to right, rgb(61, 61, 61), rgb(0, 0, 0));
     padding-bottom: 4%;
-    padding-top: 4%;
-    width: 100vw;
+    padding-top   : 4%;
+    width         : 100vw;
+}
+
+.description {
+    height         : 25vh;
+    width          : 60%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    max-width      : 720px;
+    border-radius  : 8px;
+    background     : linear-gradient(to right top, rgb(255, 255, 255), rgba(255, 255, 255, 0.5));
 }

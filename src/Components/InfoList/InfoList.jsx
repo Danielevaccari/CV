@@ -7,6 +7,9 @@ import csssvg from '../../Images/cssSvg.svg'
 import reactsvg from '../../Images/reactSvg.svg'
 import nextsvg from '../../Images/nextSvg.svg'
 import gitsvg from '../../Images/gitsvg.svg'
+import musvg from '../../Images/muSvg.svg'
+import vssvg from '../../Images/vsSvg.svg'
+import reduxsvg from '../../Images/reduxSvg.svg'
 
 const InfoList = () => {
     return (
@@ -14,8 +17,8 @@ const InfoList = () => {
             <div className='icyContainer'>
 
 
-                <div>
-                    My skills
+                <div className='infoListTitle'>
+                    Tech used in projects
                 </div>
 
 
@@ -37,6 +40,15 @@ const InfoList = () => {
                     </Grid>
                     <Grid item xs={4} className='gridItem' >
                         <img className='svg' src={nextsvg} alt=''></img>
+                    </Grid>
+                    <Grid item xs={4} className='gridItem' >
+                        <img className='svg' src={musvg} alt=''></img>
+                    </Grid>
+                    <Grid item xs={4} className='gridItem' >
+                        <img className='svg' src={vssvg} alt=''></img>
+                    </Grid>
+                    <Grid item xs={4} className='gridItem' >
+                        <img className='svg' src={reduxsvg} alt=''></img>
                     </Grid>
                 </Grid>
             </div>

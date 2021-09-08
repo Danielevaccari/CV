@@ -1,11 +1,12 @@
 .cvWalls {
     height          : 100vh;
     width           : 100vw;
-    background-color: antiquewhite;
+    background-color: rgb(70, 70, 70);
     display         : flex;
     justify-content : center;
     align-items     : center;
     flex-direction  : column;
+    color: white;
 }
 
 .cvContainer {

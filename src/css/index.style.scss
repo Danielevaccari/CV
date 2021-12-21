@@ -1,0 +1,23 @@
+@import './colors/colors.style.scss';
+@import './fonts//fonts.style.scss';
+@import '../Components/curriculumVitaePage/CurriculumVitaePage.style.scss';
+@import '../Components/personalBio/personalBio.style.scss';
+@import '../Components/Frontpage/frontpage.style.scss';
+@import '../Components/imageSlider/imageSlider.style.scss';
+@import '../Components/techSkillsDisplay/techSkillsDisplay.style.scss';
+@import '../Components/frontpage/personalProjects/personalProjects.style.scss';
+
+// global
+
+*,
+::after,
+::before {
+  box-sizing            : border-box;
+  margin                : 0%;
+  scrollbar-width       : none;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+}

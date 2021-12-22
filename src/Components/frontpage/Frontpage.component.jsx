@@ -2,7 +2,7 @@ import React from 'react';
 import PersonalProjects from './personalProjects/PersonalProjects.component';
 
 const Frontpage = () => {
-  return (
+  return (// d
     <>
       <section className='personal-projects'>
         <div className='personal-projects-container'>

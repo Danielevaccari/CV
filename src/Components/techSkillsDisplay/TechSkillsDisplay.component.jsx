@@ -1,49 +1,62 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
 import javaScriptsvg from '../../images/jsSvg.svg';
 import htmlsvg from '../../images/htmlSvg.svg';
 import csssvg from '../../images/cssSvg.svg';
 import reactsvg from '../../images/reactSvg.svg';
-import nextsvg from '../../images/nextSvg.svg';
 import gitsvg from '../../images/gitsvg.svg';
 import reduxsvg from '../../images/reduxSvg.svg';
+import cypresssvg from '../../images/cypress.svg';
+import jestsvg from '../../images/jest.svg';
 
 const InfoList = () => {
   return (
-    <div className='wallsInfoList'>
-      <div className='icyContainer'>
+    <section className='tech-skills-display-wrapper'>
+      <div className='tech-skills-display-container'>
 
 
-        <div className='infoListTitle'>
-          Tech used in projects
+        <h1 className='tech-skills-display-container-header'>
+          My skills
+        </h1>
+
+        <div className='tech-skills-display-top'>
+          <img
+            className='tech-skills-display-top-img'
+            src={javaScriptsvg} alt=''>
+          </img>
+          <img
+            className='tech-skills-display-top-img'
+            src={reactsvg} alt=''>
+          </img>
+          <img
+            className='tech-skills-display-top-img'
+            src={htmlsvg} alt=''>
+          </img>
+          <img
+            className='tech-skills-display-top-img'
+            src={csssvg} alt=''>
+          </img>
         </div>
-
-
-        <Grid spacing={2} container>
-          <Grid item xs={4} className='gridItem'>
-            <img className='svg' src={javaScriptsvg} alt=''></img>
-          </Grid>
-          <Grid item xs={4} className='gridItem' >
-            <img className='svg' src={htmlsvg} alt=''></img>
-          </Grid>
-          <Grid item xs={4} className='gridItem' >
-            <img className='svg' src={gitsvg} alt=''></img>
-          </Grid>
-          <Grid item xs={4} className='gridItem'>
-            <img className='svg' src={csssvg} alt=''></img>
-          </Grid>
-          <Grid item xs={4} className='gridItem' >
-            <img className='svg' src={reactsvg} alt=''></img>
-          </Grid>
-          <Grid item xs={4} className='gridItem' >
-            <img className='svg' src={nextsvg} alt=''></img>
-          </Grid>
-          <Grid item xs={4} className='gridItem' >
-            <img className='svg' src={reduxsvg} alt=''></img>
-          </Grid>
-        </Grid>
+        <div className='tech-skills-display-bottom'>
+          <img
+            className='tech-skills-display-bottom-img'
+            src={gitsvg} alt=''
+          >
+          </img>
+          <img
+            className='tech-skills-display-bottom-img'
+            src={reduxsvg} alt=''>
+          </img>
+          <img
+            className='tech-skills-display-bottom-img'
+            src={cypresssvg} alt=''>
+          </img>
+          <img
+            className='tech-skills-display-bottom-img'
+            src={jestsvg} alt=''>
+          </img>
+        </div>
       </div>
-    </div >
+    </section >
   );
 };
 

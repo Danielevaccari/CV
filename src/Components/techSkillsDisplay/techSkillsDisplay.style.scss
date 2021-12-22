@@ -1,63 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
-.wallsInfoList {
-    height           : 75vh;
-    width            : 100vw;
-    background-repeat: no-repeat;
-    background-size  : 100% 100%;
-    display          : flex;
-    justify-content  : center;
-    align-items      : center;
-}
+.tech-skills-display-wrapper {
+    height          : 75vh;
+    width           : 100vw;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    background-color: #9e8fb2;
 
-.infoListTitle {
-    height     : 20%;
-    font-size  : 1.3rem;
-    font-family: 'Oswald', sans-serif;
-}
+    .tech-skills-display-container {
+        height         : 60%;
+        width          : 90%;
+        background     : linear-gradient(to right top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+        border-radius  : 10px;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        flex-direction : column;
 
-.icyContainer {
-    height         : 60%;
-    width          : 90%;
-    background     : linear-gradient(to right top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
-    border-radius  : 10px;
-    backdrop-filter: blur(15px);
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
-    flex-direction : column;
-}
+        .tech-skills-display-container-header {
+            flex       : 30%;
+            display    : flex;
+            align-items: center;
+        }
 
-.icyContainer:hover {
-    background: linear-gradient(to right top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
-}
+        .tech-skills-display-top {
+            flex           : 35%;
+            width          : 70%;
+            display        : flex;
+            justify-content: space-around;
+            align-items    : center;
 
-.svg {
-    height: 70px;
-    width : 70px;
-}
+            .tech-skills-display-top-img {
+                height : 70px;
+                width  : 70px;
+                padding: 5px;
+            }
 
-.svg:hover {
-    transform: scale(1.08);
-}
+            .tech-skills-display-top-img:hover {
+                transform: scale(1.08);
+            }
 
-.gridItem {
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
-}
+            @media (max-width:426px) {
+                .tech-skills-display-top-img {
+                    height: 45px;
+                    width : 45px;
+                }
+            }
+        }
 
-@media (min-width:426px) {
-    .icyContainer {
-        width: 45%;
+        .tech-skills-display-bottom {
+            flex           : 35%;
+            width          : 70%;
+            display        : flex;
+            justify-content: space-around;
+            align-items    : center;
+
+            .tech-skills-display-bottom-img {
+                height : 50px;
+                width  : 50px;
+                padding: 5px;
+            }
+
+            .tech-skills-display-bottom-img:hover {
+                transform: scale(1.25);
+            }
+
+            @media (max-width:426px) {
+                .tech-skills-display-bottom-img {
+                    height: 35px;
+                    width : 35px;
+                }
+            }
+        }
+
+
     }
-}
 
-@media (max-width:426px) {
-    .wallsInfoList {}
-
-    .svg {
-        height: 45px;
-        width : 45px;
+    @media (min-width:426px) {
+        .tech-skills-display-container {
+            width: 45%;
+        }
     }
 }

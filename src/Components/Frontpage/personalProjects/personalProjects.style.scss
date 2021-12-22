@@ -23,8 +23,15 @@
 
 		.personal-projects-description-footer {
 			flex     : 20%;
+			display  : flex;
 			font-size: .8rem;
 			color    : dodgerblue;
+
+			.personal-projects-description-footer-image {
+				height: 30px;
+				width : 30px;
+				margin: 2%;
+			}
 		}
 
 		@media (max-width: 425px) {
@@ -54,7 +61,7 @@
 			width          : 100%;
 			max-width      : 400px;
 			transform      : skewy(-5deg);
-			box-shadow     : -5px -5px 25px rgb(112, 112, 112);
+			box-shadow     : 0px 0px 20px rgb(186, 186, 186);
 			image-rendering: optimizeQuality;
 			border-radius  : 5px;
 		}

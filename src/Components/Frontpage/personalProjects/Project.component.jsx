@@ -48,7 +48,15 @@ const Project = ({ image, description, href, technology, alt, id }) => {
           {description}
         </span>
         <span className='personal-projects-description-footer'>
-          {technology}
+          {technology.map((image, index) => {
+            return (
+              <img
+                src={image}
+                className='personal-projects-description-footer-image'
+                key={image}>
+              </img>
+            );
+          })}
         </span>
       </div>
       <div className='personal-projects-row__right'>
@@ -73,7 +81,7 @@ Project.defaultProps = {
   image: {},
   description: 'Description not found',
   href: '',
-  technology: 'Technology not found',
+  technology: [],
   alt: '',
   id: '',
 };
@@ -82,7 +90,7 @@ Project.propTypes = {
   image: PropTypes.string,
   description: PropTypes.string,
   href: PropTypes.string,
-  technology: PropTypes.string,
+  technology: PropTypes.array,
   alt: PropTypes.string,
   id: PropTypes.string,
 };

@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import React from 'react';
-import Frontpage from './Components/frontpage/Frontpage.component';
-import Bio from './Components/personalBio/PersonalBio.component';
-import CurriculumVitaePage from './Components/curriculumVitaePage/CurriculumVitaePage.component';
-import ImageSlider from './Components/imageSlider/ImageSlider.component';
-import TechSkillsDisplay from './Components/techSkillsDisplay/TechSkillsDisplay.component';
+import Frontpage from './components/frontpage/Frontpage.component';
+import Bio from './components/personalBio/PersonalBio.component';
+import CurriculumVitaePage from './components/curriculumVitaePage/CurriculumVitaePage.component';
+import ImageSlider from './components/imageSlider/ImageSlider.component';
+import TechSkillsDisplay from './components/techSkillsDisplay/TechSkillsDisplay.component';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 /**

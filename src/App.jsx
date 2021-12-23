@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import Frontpage from './components/frontpage/Frontpage.component';
-import Bio from './components/personalBio/PersonalBio.component';
+import PersonalBio from './components/personalBio/PersonalBio.component';
 import CurriculumVitaePage from './components/curriculumVitaePage/CurriculumVitaePage.component';
 import ImageSlider from './components/imageSlider/ImageSlider.component';
 import TechSkillsDisplay from './components/techSkillsDisplay/TechSkillsDisplay.component';
@@ -21,7 +21,7 @@ function App() {
           <Route path='/'
             element={
               <>
-                <Bio />
+                <PersonalBio />
                 <TechSkillsDisplay />
                 <Frontpage />
                 <ImageSlider />

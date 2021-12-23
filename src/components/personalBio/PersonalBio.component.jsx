@@ -1,20 +1,5 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import mypic from '../../images/mypic.png';
-import { makeStyles } from '@material-ui/core';
-
-
-const useStyles = makeStyles({
-  paperBack: {
-    height: '100%',
-    width: '100%',
-    display: 'flex',
-    borderRadius: '20px',
-    position: 'absolute',
-    transform: 'rotateY(180deg)',
-    pointerEvents: 'none',
-  },
-});
 
 const Bio = () => {
   const [rotated, setRotated] = useState(false);
@@ -48,7 +33,7 @@ const Bio = () => {
 
         <div className='personal-bio-right'>
           <div className='personal-bio-right-description'>
-            <h4>page of</h4>
+            <h4>portfolio</h4>
             <h1>Daniele Vaccari</h1>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import cvsvg from '../../images/cv.svg';
-import cvsvg2 from '../../images/cvpdf2.svg';
+import cvsvg from '../../images/cv1.svg';
+import cvsvg2 from '../../images/cv2.svg';
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 

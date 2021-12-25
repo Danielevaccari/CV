@@ -20,7 +20,7 @@ const personalProjects = [
   {
     id: 'cryptoAnalyzer',
     description: 'Bitcoin downward trend, volume and best buy/sell date from historic data. Data from Coingecko.com API.',
-    href: '',
+    href: 'https://tender-aryabhata-fa5705.netlify.app',
     image: cryptopng,
     technology: [reactsvg],
     alt: 'cryptopic',

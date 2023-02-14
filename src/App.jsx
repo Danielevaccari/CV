@@ -30,9 +30,7 @@ function App() {
           </Route>
 
           <Route path='/cv'
-            element={
-              <CurriculumVitaePage />
-            }>
+            element={<CurriculumVitaePage /> }>
           </Route>
 
         </Routes>

@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import { Paper } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-const data = [{
-  number: '1',
-  img: 'http://www.scenesarasota.com/magazine/wp-content/uploads/2018/06/beautiful-caribbean-beach-high-definition-wallpaper-for-desktop-background-images-free-stock-photos-desktop-images-for-apple-iphone-wallpaper-2880x1800-768x480.jpg',
+interface IImage {
+  readonly id: number;
+  readonly source: string;
+}
+
+const data: ReadonlyArray<IImage> = [{
+  id: 1,
+  source: 'http://www.scenesarasota.com/magazine/wp-content/uploads/2018/06/beautiful-caribbean-beach-high-definition-wallpaper-for-desktop-background-images-free-stock-photos-desktop-images-for-apple-iphone-wallpaper-2880x1800-768x480.jpg',
 },
 {
-  number: '2',
-  img: 'https://live.staticflickr.com/4261/34649555303_2724b873a9_b.jpg',
+  id: 2,
+  source: 'https://live.staticflickr.com/4261/34649555303_2724b873a9_b.jpg',
 },
 {
-  number: '3',
-  img: 'https://www.desktopbackground.org/download/o/2013/08/24/627913_beach-wallpaper-hd-download-high-resolution-images-free-stock_2560x1440_h.jpg',
+  id: 3,
+  source: 'https://www.desktopbackground.org/download/o/2013/08/24/627913_beach-wallpaper-hd-download-high-resolution-images-free-stock_2560x1440_h.jpg',
 },
 {
-  number: '4',
-  img: 'https://images.unsplash.com/photo-1508020268086-b96cf4f4bb2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjF8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80',
+  id: 4,
+  source: 'https://images.unsplash.com/photo-1508020268086-b96cf4f4bb2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjF8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80',
 }];
 
-const Slider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [progress, setProgress] = useState(0);
+const ContentSlider: React.FunctionComponent = () => {
+  const [currentIndex, setCurrentIndex] = React.useState<number>(0);
+  const [progress, setProgress] = React.useState<number>(0);
 
   const nextIndex = () => {
     setCurrentIndex(currentIndex === data.length - 1 ? 0 : currentIndex + 1);
@@ -55,15 +60,13 @@ const Slider = () => {
           />
           {data.map((element, index) => {
             return (
-
-              // eslint-disable-next-line max-len
               <div key={index} className={currentIndex === index ? 'containerSlider' :
                 'containerSlider2'}>
                 {currentIndex === index && <Paper
                   elevation={5}
                   className='paper'
                 >
-                  <img src={element.img} alt='dv' style={{
+                  <img src={element.source} style={{
                     height: '100%',
                     width: '100%',
                   }}>
@@ -79,12 +82,10 @@ const Slider = () => {
             value={progress}
             color='primary'
           />
-
-
         </div>
       </div>
     </>
   );
 };
 
-export default Slider;
+export default ContentSlider;

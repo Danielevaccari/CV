@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import mypic from '../../images/mypic.png';
 
-const Bio = () => {
-  const [rotated, setRotated] = useState(false);
+const PersonalBio: React.FunctionComponent = () => {
+  const [rotated, setRotated] = React.useState<boolean>(false);
 
-  const rotate = () => {
-    setRotated((prevRotated) => !prevRotated);
+  const rotate = (): void => {
+    setRotated(prevRotated => !prevRotated);
   };
 
   return (
@@ -42,4 +42,4 @@ const Bio = () => {
   );
 };
 
-export default Bio;
+export default PersonalBio;

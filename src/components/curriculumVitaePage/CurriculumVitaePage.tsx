@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import cvsvg from '../../images/cv1.svg';
 import cvsvg2 from '../../images/cv2.svg';
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 
-const CV = () => {
-  const [pageNumber, setPageNumber] = useState(false);
+const CV: React.FunctionComponent = () => {
+  const [pageNumber, setPageNumber] = React.useState<boolean>(false);
 
   return (
     <>

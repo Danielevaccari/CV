@@ -1,7 +1,7 @@
-import React from 'react';
-import PersonalProjects from './personalProjects/PersonalProjects.component';
+import * as React from 'react';
+import PersonalProjects from './personalProjects/PersonalProjects';
 
-const Frontpage = () => {
+const Frontpage: React.FunctionComponent = () => {
   return (
     <>
       <section className='personal-projects'>

@@ -1,20 +1,31 @@
 {
     "compilerOptions": {
-      "target": "es5",                    /* Specify ECMAScript target version */
-      "module": "commonjs",               /* Specify module code generation */
-      "lib": ["dom", "es2015"],           /* List of library files to be included in the compilation */
-      "jsx": "react",                     /* Specify JSX mode: 'preserve', 'react', or 'react-native' */
-      "strict": true,                     /* Enable all strict type checking options */
-      "esModuleInterop": true,            /* Enables compatibility with CommonJS modules */
-      "skipLibCheck": true,               /* Skip type checking of declaration files */
-      "forceConsistentCasingInFileNames": true /* Ensure that casing is consistent in module names */
+        "target": "es5" /* Specify ECMAScript target version */,
+        "module": "commonjs" /* Specify module code generation */,
+        "lib": [
+            "dom",
+            "es2015"
+        ] /* List of library files to be included in the compilation */,
+        "jsx": "react" /* Specify JSX mode: 'preserve', 'react', or 'react-native' */,
+        "strict": true /* Enable all strict type checking options */,
+        "esModuleInterop": true /* Enables compatibility with CommonJS modules */,
+        "skipLibCheck": true /* Skip type checking of declaration files */,
+        "forceConsistentCasingInFileNames": true /* Ensure that casing is consistent in module names */,
+        "resolveJsonModule": true /* Enable importing JSON modules */,
+        "declaration": true /* Generate declaration files (.d.ts) */,
+        "sourceMap": true /* Generate source maps for easier debugging */,
+        "outDir": "build" /* Output directory for compiled files */,
+        "rootDir": "./src" /* Root directory of the source files */,
+        "noUnusedLocals": true /* Report errors on unused local variables */,
+        "noUnusedParameters": true /* Report errors on unused function parameters */,
+        "noImplicitReturns": true /* Report errors on functions with missing return statements */,
+        "noFallthroughCasesInSwitch": true /* Report errors on switch statements with fallthrough cases */,
+        "strictNullChecks": true /* Enable strict null checking */
     },
-    "include": ["src/**/*"]               /* Include files for compilation */
-    // "exclude": [],                      /* Exclude files from compilation */
-    // "extends": "",                      /* Extend configuration from another file */
-    // "compileOnSave": true,              /* Re-compile on file save */
-    // "baseUrl": ".",                     /* Base directory to resolve non-relative module names */
-    // "paths": {},                        /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl' */
-    // "typeRoots": [],                    /* List of folders to include type definitions from */
-    // "types": []                         /* List of type definitions to be included in the compilation */
-  }
+    "include": [
+        "./src/**/*",
+        "./src/custom.d.ts"
+    ] /* Include files for compilation */,
+    "exclude": ["node_modules"] /* Exclude files from compilation */,
+    "extensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".png", ".svg"]
+}

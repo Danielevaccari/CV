@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
+
 *,
 ::after,
 ::before {
@@ -5,6 +7,9 @@
     margin: 0%;
     scrollbar-width: none;
     -webkit-font-smoothing: antialiased;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -16,8 +21,6 @@ body {
     flex-direction: row;
     background-color: transparent;
     height: 40vh;
-    color: frontPageFontColor;
-    font-family: mainFont;
 }
 
 .personal-projects-row__left {
@@ -93,11 +96,7 @@ body {
     align-items: center;
     max-width: 720px;
     border-radius: 8px;
-    background: linear-gradient(
-        to right top,
-        #ffffff,
-        rgba(255, 255, 255, 0.5)
-    );
+    background: linear-gradient(to right top, #ffffff, rgba(255, 255, 255, 0.5));
 }
 
 .personal-projects-container {
@@ -198,7 +197,7 @@ body {
 }
 
 .personal-bio-wrapper {
-    background-color: #9e8fb2;
+    background-color: #ffffff;
     display: flex;
 }
 
@@ -211,7 +210,6 @@ body {
     align-items: center;
     flex: 35%;
     overflow: hidden;
-    background: linear-gradient(to right, rgb(0, 0, 0), #28282b);
     overflow: hidden;
     border-radius: 0px 0px 35% 0px;
     perspective: 500px;
@@ -253,15 +251,12 @@ body {
     height: 100%;
     width: 100%;
     border-radius: 15px;
-    background-color: #9e8fb2;
+    background-color: #ffffff;
     transform: rotateY(180deg);
     cursor: pointer;
 }
 
-.personal-bio-wrapper
-    .personal-bio-left
-    .personal-bio-flipper-container
-    #bioimg {
+.personal-bio-wrapper .personal-bio-left .personal-bio-flipper-container #bioimg {
     height: 100%;
     width: 100%;
     background-color: #fff8dc;
@@ -277,6 +272,7 @@ body {
     min-height: 150px;
     background: linear-gradient(to left, #28282b, #28282b);
     border-radius: 0px 0px 0px 35%;
+    color: #ffffff;
 }
 
 .personal-bio-wrapper .personal-bio-right .personal-bio-right-description {
@@ -284,19 +280,9 @@ body {
     justify-content: center;
     flex-direction: column;
     margin-left: 10%;
+    margin-top: 5%;
     height: 50%;
     width: 60%;
-}
-
-h1,
-h2 {
-    font-size: 2vw;
-}
-
-h1,
-h4 {
-    font-family: "Oswald", sans-serif;
-    color: #ffffff;
 }
 
 @media (max-width: 708px) {
@@ -314,17 +300,12 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #9e8fb2;
 }
 
 .tech-skills-display-container {
     height: 60%;
     width: 90%;
-    background: linear-gradient(
-        to right top,
-        rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.3)
-    );
+    background: linear-gradient(to right top, rgba(134, 191, 255, 0.5), rgba(146, 192, 255, 0.1));
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -336,6 +317,7 @@ h4 {
     flex: 30%;
     display: flex;
     align-items: center;
+    color: #28282b;
 }
 
 .tech-skills-display-top {

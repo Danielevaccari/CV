@@ -2,16 +2,16 @@ import nodesvg from "../../../images/node.svg";
 import reactsvg from "../../../images/reactSvg.svg";
 import nextsvg from "../../../images/next.svg";
 import postgressvg from "../../../images/postgresql.svg";
+import womanSvg from "../../../images/woman.svg";
 import { IProject } from "../../../interfaces";
 
 const personalProjects: ReadonlyArray<IProject> = [
     {
-        id: "satoja",
-        description:
-            "Software project course in University of Tampere. Application that allows easier selling and buying of locally produced food. Customer: Satoja oy",
-        href: "https://satoja2.herokuapp.com",
-        image: "",
-        icons: [reactsvg, nodesvg, postgressvg],
+        id: "mtg",
+        description: "Rulebook for cardgame Magic The Gathering. Data from Wizards API.",
+        href: "https://reaktor-next-js-express-js-preassignment.vercel.app",
+        image: womanSvg,
+        icons: [reactsvg, nextsvg],
     },
     {
         id: "bitcoinTracker",
@@ -22,19 +22,12 @@ const personalProjects: ReadonlyArray<IProject> = [
         icons: [reactsvg],
     },
     {
-        id: "mtg",
+        id: "satoja",
         description:
-            "Rulebook for cardgame Magic The Gathering. Data from Wizards API.",
-        href: "https://reaktor-next-js-express-js-preassignment.vercel.app",
+            "Software project course in University of Tampere. Application that allows easier selling and buying of locally produced food. Customer: Satoja oy",
+        href: "https://satoja2.herokuapp.com",
         image: "",
-        icons: [reactsvg, nextsvg],
-    },
-    {
-        id: "cv",
-        description: "My CV",
-        href: "/CV",
-        image: "",
-        icons: [],
+        icons: [reactsvg, nodesvg, postgressvg],
     },
 ];
 

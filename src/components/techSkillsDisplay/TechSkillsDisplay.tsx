@@ -1,5 +1,5 @@
 import * as React from "react";
-import javaScriptsvg from "../../images/jsSvg.svg";
+import typescriptIcon from "../../images/typescriptIcon.svg";
 import htmlsvg from "../../images/htmlSvg.svg";
 import csssvg from "../../images/cssSvg.svg";
 import reactsvg from "../../images/reactSvg.svg";
@@ -13,49 +13,19 @@ const TechInfoList: React.FunctionComponent = () => {
     return (
         <section className="tech-skills-display-wrapper">
             <div className="tech-skills-display-container">
-                <h1 className="tech-skills-display-container-header">
-                    My skills
-                </h1>
+                <h1 className="tech-skills-display-container-header">Experience</h1>
 
                 <div className="tech-skills-display-top">
-                    <img
-                        className="tech-skills-display-top-img"
-                        src={javaScriptsvg}
-                    />
-                    <img
-                        className="tech-skills-display-top-img"
-                        src={reactsvg}
-                    />
-                    <img
-                        className="tech-skills-display-top-img"
-                        src={htmlsvg}
-                    />
-                    <img
-                        className="tech-skills-display-top-img"
-                        src={csssvg}
-                        alt=""
-                    />
+                    <img className="tech-skills-display-top-img" src={typescriptIcon} />
+                    <img className="tech-skills-display-top-img" src={reactsvg} />
+                    <img className="tech-skills-display-top-img" src={htmlsvg} />
+                    <img className="tech-skills-display-top-img" src={csssvg} />
                 </div>
                 <div className="tech-skills-display-bottom">
-                    <img
-                        className="tech-skills-display-bottom-img"
-                        src={gitsvg}
-                    />
-                    <img
-                        className="tech-skills-display-bottom-img"
-                        src={reduxsvg}
-                        alt=""
-                    ></img>
-                    <img
-                        className="tech-skills-display-bottom-img"
-                        src={cypresssvg}
-                        alt=""
-                    ></img>
-                    <img
-                        className="tech-skills-display-bottom-img"
-                        src={jestsvg}
-                        alt=""
-                    ></img>
+                    <img className="tech-skills-display-bottom-img" src={gitsvg} />
+                    <img className="tech-skills-display-bottom-img" src={reduxsvg} />
+                    <img className="tech-skills-display-bottom-img" src={cypresssvg} />
+                    <img className="tech-skills-display-bottom-img" src={jestsvg} />
                 </div>
             </div>
         </section>

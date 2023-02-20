@@ -1,4 +1,5 @@
 import * as React from "react";
+import { frontPageFontColor } from "../../../css/colors/colors";
 import "../../../css/index.css";
 import { IProject } from "../../../interfaces";
 
@@ -11,13 +12,9 @@ const Project: React.FunctionComponent<IProject> = props => {
     const [width, setWidth] = React.useState<number>(0);
     const [hovered, setHovered] = React.useState<boolean>(false);
 
-    const row = React.useRef<HTMLElement | null>(
-        document.getElementById(props.id)
-    );
+    const row = React.useRef<HTMLElement | null>(document.getElementById(props.id));
 
-    const platformOffset = (
-        event: React.MouseEvent<HTMLImageElement, MouseEvent>
-    ): void => {
+    const platformOffset = (event: React.MouseEvent<HTMLImageElement, MouseEvent>): void => {
         if (row.current !== null) {
             setX(event.pageX - offLeft);
             setY(event.pageY - offTop);
@@ -54,10 +51,16 @@ const Project: React.FunctionComponent<IProject> = props => {
         }
     };
 
+    function openProjectLink(href: string) {
+        window.open(href);
+    }
+
     return (
         <div className="personal-projects-row">
             <div className="personal-projects-row__left">
-                <span className="personal-projects-description">
+                <span
+                    className="personal-projects-description"
+                    style={{ color: frontPageFontColor }}>
                     {props.description}
                 </span>
                 <span className="personal-projects-description-footer">
@@ -66,18 +69,13 @@ const Project: React.FunctionComponent<IProject> = props => {
                             <img
                                 src={image}
                                 className="personal-projects-description-footer-image"
-                                key={image}
-                            ></img>
+                                key={image}></img>
                         );
                     })}
                 </span>
             </div>
             <div className="personal-projects-row__right">
-                <a
-                    style={{ textDecoration: "none" }}
-                    href={props.href}
-                    className="jj"
-                >
+                <div style={{ textDecoration: "none" }} className="jj">
                     <img
                         id={props.id}
                         className="personal-projects-image"
@@ -85,8 +83,9 @@ const Project: React.FunctionComponent<IProject> = props => {
                         onMouseMove={e => platformOffset(e)}
                         onMouseOut={() => setHovered(false)}
                         onMouseLeave={() => resetTilting()}
-                    ></img>
-                </a>
+                        onClick={() => openProjectLink(props.href)}
+                    />
+                </div>
             </div>
         </div>
     );

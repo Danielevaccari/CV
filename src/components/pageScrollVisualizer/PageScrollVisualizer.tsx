@@ -13,11 +13,8 @@ const PageScrollVisualizer: React.FunctionComponent = () => {
         <div
             className="scrollVisualizerContainer"
             style={{
-                width: `${
-                    (scrollAmount / (docHeight - window.innerHeight)) * 100
-                }vw`,
-            }}
-        ></div>
+                width: `${(scrollAmount / (docHeight - window.innerHeight)) * 100}vw`,
+            }}></div>
     );
 };
 

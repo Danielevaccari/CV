@@ -13,16 +13,8 @@ const CV: React.FunctionComponent = () => {
             <div className="cvWalls">
                 <div className="cvContainer">
                     <div className="paper">
-                        {!pageNumber ? (
-                            <img className="cvPdfSvg" src={cvsvg} alt=""></img>
-                        ) : (
-                            ""
-                        )}
-                        {pageNumber ? (
-                            <img className="cvPdfSvg" src={cvsvg2} alt=""></img>
-                        ) : (
-                            ""
-                        )}
+                        {!pageNumber ? <img className="cvPdfSvg" src={cvsvg} alt=""></img> : ""}
+                        {pageNumber ? <img className="cvPdfSvg" src={cvsvg2} alt=""></img> : ""}
                     </div>
                 </div>
                 <Button disableRipple component={Link} to="/" size="large">

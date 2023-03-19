@@ -196,8 +196,13 @@ body {
     z-index: 1000;
 }
 
+.frontpage-wrapper {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
 .personal-bio-wrapper {
-    background-color: #ffffff;
     display: flex;
 }
 
@@ -270,7 +275,6 @@ body {
     justify-content: flex-start;
     height: 20vw;
     min-height: 150px;
-    background: linear-gradient(to left, #28282b, #28282b);
     border-radius: 0px 0px 0px 35%;
     color: #ffffff;
 }
@@ -283,6 +287,7 @@ body {
     margin-top: 5%;
     height: 50%;
     width: 60%;
+    color: #28282b;
 }
 
 @media (max-width: 708px) {

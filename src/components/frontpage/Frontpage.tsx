@@ -1,27 +1,21 @@
 import * as React from "react";
-import PersonalProjects from "./personalProjects/PersonalProjects";
-import "../../css/index.css";
-import { frontPageBgColorDark, frontPageBgColorLight } from "../../css/colors/colors";
-import { EThemeMode, IThemeContext, ThemeContext } from "../theme/ThemeProvider";
+import PersonalBio from "./PersonalBio";
+import emeraldCity from "../../images/emeraldCity.svg";
 
-const Frontpage: React.FunctionComponent = () => {
-    const theme = React.useContext<IThemeContext>(ThemeContext);
-
+const Frontpage = () => {
     return (
-        <>
-            <section className="personal-projects">
-                <div
-                    className="personal-projects-container"
-                    style={{
-                        backgroundColor:
-                            theme.mode === EThemeMode.Dark
-                                ? frontPageBgColorDark
-                                : frontPageBgColorLight,
-                    }}>
-                    <PersonalProjects />
-                </div>
-            </section>
-        </>
+        <div className="frontpage-wrapper">
+            <img
+                src={emeraldCity}
+                style={{
+                    position: "fixed",
+                    top: "0",
+                    left: "0",
+                    zIndex: "-1",
+                }}
+            />
+            <PersonalBio />
+        </div>
     );
 };
 

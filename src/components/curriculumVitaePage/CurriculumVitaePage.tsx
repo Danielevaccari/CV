@@ -1,6 +1,4 @@
 import * as React from "react";
-import cvsvg from "../../images/cv1.svg";
-import cvsvg2 from "../../images/cv2.svg";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import "../../css/index.css";
@@ -13,8 +11,8 @@ const CV: React.FunctionComponent = () => {
             <div className="cvWalls">
                 <div className="cvContainer">
                     <div className="paper">
-                        {!pageNumber ? <img className="cvPdfSvg" src={cvsvg} alt=""></img> : ""}
-                        {pageNumber ? <img className="cvPdfSvg" src={cvsvg2} alt=""></img> : ""}
+                        {!pageNumber ? <img className="cvPdfSvg" src={""} alt=""></img> : ""}
+                        {pageNumber ? <img className="cvPdfSvg" src={""} alt=""></img> : ""}
                     </div>
                 </div>
                 <Button disableRipple component={Link} to="/" size="large">

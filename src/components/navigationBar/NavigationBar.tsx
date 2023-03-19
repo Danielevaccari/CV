@@ -30,7 +30,7 @@ const NavigationBar = () => {
                     </IconButton>
 
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Menu
+                        Vaccari
                     </Typography>
                     <Switch
                         checked={theme.mode === EThemeMode.Light}

@@ -1,6 +1,7 @@
 import * as React from "react";
 import Paper from "@mui/material/Paper";
 import LinearProgress from "@mui/material/LinearProgress";
+import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
 interface IImage {
     readonly id: number;
@@ -31,19 +32,13 @@ const ContentSlider: React.FunctionComponent = () => {
     const [progress, setProgress] = React.useState<number>(0);
 
     const nextIndex = () => {
-        setCurrentIndex(
-            currentIndex === data.length - 1 ? 0 : currentIndex + 1
-        );
+        setCurrentIndex(currentIndex === data.length - 1 ? 0 : currentIndex + 1);
         setProgress(
-            progress === 100
-                ? 0
-                : progress + Math.round((1 / (data.length - 1)) * 100) + 1 / 3
+            progress === 100 ? 0 : progress + Math.round((1 / (data.length - 1)) * 100) + 1 / 3
         );
     };
     const previousIndex = () => {
-        setCurrentIndex(
-            currentIndex === 0 ? data.length - 1 : currentIndex - 1
-        );
+        setCurrentIndex(currentIndex === 0 ? data.length - 1 : currentIndex - 1);
         setProgress(
             Math.round(progress) === 0
                 ? 100
@@ -55,7 +50,7 @@ const ContentSlider: React.FunctionComponent = () => {
         <>
             <div className="outline">
                 <div className="slider">
-                    <div
+                    <ArrowBackIos
                         onClick={previousIndex}
                         style={{
                             position: "absolute",
@@ -64,12 +59,11 @@ const ContentSlider: React.FunctionComponent = () => {
                         }}
                     />
 
-                    <div
+                    <ArrowForwardIos
                         onClick={nextIndex}
                         style={{
                             position: "absolute",
                             right: "7%",
-                            transform: "rotate(180deg)",
                             zIndex: "10",
                         }}
                     />
@@ -78,11 +72,8 @@ const ContentSlider: React.FunctionComponent = () => {
                             <div
                                 key={index}
                                 className={
-                                    currentIndex === index
-                                        ? "containerSlider"
-                                        : "containerSlider2"
-                                }
-                            >
+                                    currentIndex === index ? "containerSlider" : "containerSlider2"
+                                }>
                                 {currentIndex === index && (
                                     <Paper elevation={5} className="paper">
                                         <img
@@ -91,7 +82,7 @@ const ContentSlider: React.FunctionComponent = () => {
                                                 height: "100%",
                                                 width: "100%",
                                             }}
-                                        ></img>
+                                        />
                                     </Paper>
                                 )}
                             </div>

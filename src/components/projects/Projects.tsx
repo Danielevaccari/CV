@@ -18,6 +18,8 @@ const Projects: React.FunctionComponent = () => {
                                 ? frontPageBgColorDark
                                 : frontPageBgColorLight,
                     }}>
+                    <div className="personal-projects-header">Projects</div>
+
                     <PersonalProjects />
                 </div>
             </section>
@@ -25,4 +27,4 @@ const Projects: React.FunctionComponent = () => {
     );
 };
 
-export default Projects;
+export { Projects };

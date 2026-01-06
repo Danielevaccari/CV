@@ -43,7 +43,7 @@ body {
     flex: 20%;
     display: flex;
     font-size: 0.8rem;
-    color: dodgerblue;
+    color: rgb(146, 201, 255);
 }
 
 .personal-projects-description-footer-image {
@@ -99,20 +99,18 @@ body {
     background: linear-gradient(to right top, #ffffff, rgba(255, 255, 255, 0.5));
 }
 
+.personal-projects-header {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2%;
+    color: #000000;
+}
+
 .personal-projects-container {
     background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
     padding: 5%;
-}
-
-.outline {
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: cornflowerblue;
-    position: relative;
 }
 
 .outline .slider {
@@ -191,8 +189,8 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 3px;
-    background-color: #fffce5;
+    height: 5px;
+    background-color: #000000;
     z-index: 1000;
 }
 
@@ -200,72 +198,6 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-}
-
-.personal-bio-wrapper {
-    display: flex;
-}
-
-.personal-bio-wrapper .personal-bio-left {
-    display: flex;
-    height: 20vw;
-    min-height: 150px;
-    min-width: 150px;
-    justify-content: center;
-    align-items: center;
-    flex: 35%;
-    overflow: hidden;
-    overflow: hidden;
-    border-radius: 0px 0px 35% 0px;
-    perspective: 500px;
-}
-
-.personal-bio-wrapper .personal-bio-left .personal-bio-flipper-container {
-    height: 14vw;
-    width: 12vw;
-    min-height: 100px;
-    min-width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-style: preserve-3d;
-    transition-duration: 0.5s;
-    border-radius: 15px;
-}
-
-.personal-bio-wrapper
-    .personal-bio-left
-    .personal-bio-flipper-container
-    .personal-bio-flipper-front {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    border-radius: 30px;
-    position: absolute;
-    cursor: pointer;
-    background: transparent;
-}
-
-.personal-bio-wrapper
-    .personal-bio-left
-    .personal-bio-flipper-container
-    .personal-bio-flipper-back {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    border-radius: 15px;
-    background-color: #ffffff;
-    transform: rotateY(180deg);
-    cursor: pointer;
-}
-
-.personal-bio-wrapper .personal-bio-left .personal-bio-flipper-container #bioimg {
-    height: 100%;
-    width: 100%;
-    background-color: #fff8dc;
-    border-radius: 15px;
 }
 
 .personal-bio-wrapper .personal-bio-right {
@@ -310,7 +242,7 @@ body {
 .tech-skills-display-container {
     height: 60%;
     width: 90%;
-    background: linear-gradient(to right top, rgba(134, 191, 255, 0.5), rgba(146, 192, 255, 0.1));
+    background: rgba(182, 213, 255, 0.8);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -392,14 +324,6 @@ body {
     color: white;
 }
 
-.cvContainer {
-    height: 80vh;
-    width: 90vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .paper {
     display: flex;
     justify-content: center;
@@ -412,14 +336,4 @@ body {
     );
     border-radius: 5px;
     transition-duration: 0.5s;
-}
-
-.paper:hover {
-    transform: scale(1.08);
-    transition-duration: 0.5s;
-}
-
-.cvPdfSvg {
-    height: 100%;
-    width: 100%;
 }

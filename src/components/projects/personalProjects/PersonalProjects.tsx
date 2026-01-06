@@ -1,6 +1,6 @@
 import * as React from "react";
-import personalProjects from "./personalProjects.data";
-import Project from "./ProjectRow";
+import { personalProjects } from "./personalProjects.data";
+import { Project } from "./ProjectRow";
 
 const PersonalProjects: React.FunctionComponent = () => {
     return (

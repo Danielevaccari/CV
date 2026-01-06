@@ -1,5 +1,5 @@
 import * as React from "react";
-import PersonalBio from "./PersonalBio";
+import { PersonalBio } from "./PersonalBio";
 import emeraldCity from "../../images/emeraldCity.svg";
 
 const Frontpage = () => {

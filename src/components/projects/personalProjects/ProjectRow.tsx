@@ -1,9 +1,16 @@
 import * as React from "react";
-import { frontPageFontColor } from "../../../css/colors/colors";
+import { darkFrontFontColor } from "../../../css/colors/colors";
 import "../../../css/index.css";
-import { IProject } from "../../../interfaces";
 
-const Project: React.FunctionComponent<IProject> = props => {
+type Props = {
+    id: number;
+    description: string;
+    image: string;
+    href: string;
+    icons: string[];
+};
+
+const Project = ({ description, image, href, icons, id }: Props): React.ReactElement => {
     const [x, setX] = React.useState<number>(1);
     const [y, setY] = React.useState<number>(1);
     const [offTop, setOffTop] = React.useState<number>(0);
@@ -56,7 +63,7 @@ const Project: React.FunctionComponent<IProject> = props => {
     }
 
     React.useEffect(() => {
-        row.current = document.getElementById(props.id);
+        row.current = document.getElementById(id.toString());
     }, []);
 
     return (
@@ -64,11 +71,11 @@ const Project: React.FunctionComponent<IProject> = props => {
             <div className="personal-projects-row__left">
                 <span
                     className="personal-projects-description"
-                    style={{ color: frontPageFontColor }}>
-                    {props.description}
+                    style={{ color: darkFrontFontColor }}>
+                    {description}
                 </span>
                 <span className="personal-projects-description-footer">
-                    {props.icons.map(image => {
+                    {icons.map(image => {
                         return (
                             <img
                                 src={image}
@@ -81,13 +88,13 @@ const Project: React.FunctionComponent<IProject> = props => {
             <div className="personal-projects-row__right">
                 <div style={{ textDecoration: "none" }} className="jj">
                     <img
-                        id={props.id}
+                        id={id.toString()}
                         className="personal-projects-image"
-                        src={props.image}
+                        src={image}
                         onMouseMove={e => platformOffset(e)}
                         onMouseOut={() => setHovered(false)}
                         onMouseLeave={() => resetTilting()}
-                        onClick={() => openProjectLink(props.href)}
+                        onClick={() => openProjectLink(href)}
                     />
                 </div>
             </div>
@@ -95,4 +102,4 @@ const Project: React.FunctionComponent<IProject> = props => {
     );
 };
 
-export default Project;
+export { Project };

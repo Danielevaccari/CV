@@ -4,7 +4,7 @@ import nextsvg from "../../../images/next.svg";
 import postgressvg from "../../../images/postgresql.svg";
 import cards from "../../../images/cards.svg";
 import hedera from "../../../images/hedera.svg";
-import hederasmalllogo from "../../../images/hederaSmallLogo.svg";
+import hederasmalllogo from "../../../images/hederasmalllogo.svg";
 import { IProject } from "../../../interfaces";
 
 export const personalProjects: ReadonlyArray<IProject> = [

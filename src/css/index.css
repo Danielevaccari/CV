@@ -102,7 +102,11 @@ body {
 .personal-projects-header {
     font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 2%;
+    color: #000000;
+}
+
+.personal-projects-header-small {
+    font-size: 1rem;
     color: #000000;
 }
 

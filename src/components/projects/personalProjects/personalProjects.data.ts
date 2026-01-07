@@ -5,6 +5,8 @@ import postgressvg from "../../../images/postgresql.svg";
 import cards from "../../../images/cards.svg";
 import hedera from "../../../images/hedera.svg";
 import hederasmalllogo from "../../../images/hederasmalllogo.svg";
+import magicthegathering from "../../../images/magicthegathering.svg";
+import bitcoinsvg from "../../../images/bitcoinsvg.svg";
 import { IProject } from "../../../interfaces";
 
 export const personalProjects: ReadonlyArray<IProject> = [
@@ -19,7 +21,7 @@ export const personalProjects: ReadonlyArray<IProject> = [
         id: 2,
         description: "Rulebook for cardgame Magic The Gathering. Data from Wizards API.",
         href: "https://reaktor-next-js-express-js-preassignment.vercel.app",
-        image: cards,
+        image: magicthegathering,
         icons: [reactsvg, nextsvg],
     },
     {
@@ -27,7 +29,7 @@ export const personalProjects: ReadonlyArray<IProject> = [
         description:
             "Bitcoin downward trend, volume and best buy/sell date from historic data. Data from Coingecko.com API.",
         href: "https://tender-aryabhata-fa5705.netlify.app",
-        image: cards,
+        image: bitcoinsvg,
         icons: [reactsvg],
     },
     {

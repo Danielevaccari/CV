@@ -6,7 +6,7 @@ import reactsvg from "../../images/reactSvg.svg";
 import gitsvg from "../../images/gitsvg.svg";
 import reduxsvg from "../../images/reduxSvg.svg";
 import cypresssvg from "../../images/cypress.svg";
-import jestsvg from "../../images/jest.svg";
+import sqlicon from "../../images/sqlicon.svg";
 import "../../css/index.css";
 
 const TechInfoList: React.FunctionComponent = () => {
@@ -22,10 +22,10 @@ const TechInfoList: React.FunctionComponent = () => {
                     <img className="tech-skills-display-top-img" src={csssvg} />
                 </div>
                 <div className="tech-skills-display-bottom">
+                    <img className="tech-skills-display-bottom-img" src={sqlicon} />
                     <img className="tech-skills-display-bottom-img" src={gitsvg} />
                     <img className="tech-skills-display-bottom-img" src={reduxsvg} />
                     <img className="tech-skills-display-bottom-img" src={cypresssvg} />
-                    <img className="tech-skills-display-bottom-img" src={jestsvg} />
                 </div>
             </div>
         </section>

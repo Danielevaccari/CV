@@ -19,6 +19,9 @@ const Projects: React.FunctionComponent = () => {
                                 : frontPageBgColorLight,
                     }}>
                     <div className="personal-projects-header">Projects</div>
+                    <div className="personal-projects-header-small">
+                        click card on the right to open the project
+                    </div>
 
                     <PersonalProjects />
                 </div>

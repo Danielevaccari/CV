@@ -28,9 +28,7 @@ const NavigationBar = () => {
                         <MenuIcon />
                     </IconButton>
 
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Vaccari
-                    </Typography>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}></Typography>
                     <Switch
                         checked={theme.mode === EThemeMode.Light}
                         onClick={() => theme.toggleTheme()}

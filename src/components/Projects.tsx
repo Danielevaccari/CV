@@ -1,10 +1,11 @@
 import * as React from "react";
-import PersonalProjects from "./personalProjects/PersonalProjects";
-import "../../css/index.css";
-import { frontPageBgColorDark, frontPageBgColorLight } from "../../css/colors/colors";
-import { EThemeMode, IThemeContext, ThemeContext } from "../theme/ThemeProvider";
+import "../css/index.css";
+import { frontPageBgColorDark, frontPageBgColorLight } from "../css/colors";
+import { EThemeMode, IThemeContext, ThemeContext } from "./ThemeProvider";
+import { Project } from "./ProjectRow";
+import { personalProjects } from "./constants";
 
-const Projects: React.FunctionComponent = () => {
+const Projects = () => {
     const theme = React.useContext<IThemeContext>(ThemeContext);
 
     return (
@@ -22,8 +23,18 @@ const Projects: React.FunctionComponent = () => {
                     <div className="personal-projects-header-small">
                         click card on the right to open the project
                     </div>
-
-                    <PersonalProjects />
+                    {personalProjects.map(project => {
+                        return (
+                            <Project
+                                key={project.id}
+                                id={project.id}
+                                image={project.image}
+                                description={project.description}
+                                href={project.href}
+                                icons={project.icons}
+                            />
+                        );
+                    })}
                 </div>
             </section>
         </>

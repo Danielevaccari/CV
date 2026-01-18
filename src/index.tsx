@@ -10,7 +10,6 @@ const rootElement =
 
 ReactDOM.render(
     <React.StrictMode>
-        {/* Wrap whole application in Redux */}
         <Provider store={store}>
             <App />
         </Provider>

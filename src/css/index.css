@@ -83,11 +83,6 @@ body {
     border-radius: 5px;
 }
 
-.frontpage {
-    padding: 5%;
-    width: 100vw;
-}
-
 .description {
     height: 25vh;
     width: 60%;
@@ -117,63 +112,6 @@ body {
     padding: 5%;
 }
 
-.outline .slider {
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.outline .containerSlider {
-    position: absolute;
-    width: 85vw;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transition-duration: 1s;
-    transform: scale(1.08);
-}
-
-.outline .containerSlider .paper {
-    height: 100%;
-    width: 40%;
-    min-width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.outline .containerSlider .paper2 {
-    height: 100%;
-    width: 40%;
-    min-width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition-duration: 1s;
-    transform: scale(1.08);
-}
-
-.outline .containerSlider2 {
-    position: absolute;
-    width: 85vw;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.3;
-    transition-duration: 1s;
-}
-
-@media (max-width: 320px) {
-    .outline .containerSlider,
-    .outline .containerSlider2 {
-        height: 150px;
-    }
-}
-
 .outline .sliderProgress {
     background-color: lightgrey;
     width: 20%;
@@ -186,22 +124,6 @@ body {
     .outline .sliderProgress {
         bottom: 4%;
     }
-}
-
-.scrollVisualizerContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 5px;
-    background-color: #000000;
-    z-index: 1000;
-}
-
-.frontpage-wrapper {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
 }
 
 .personal-bio-wrapper .personal-bio-right {
@@ -235,19 +157,11 @@ body {
     }
 }
 
-.tech-skills-display-wrapper {
-    height: 75vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .tech-skills-display-container {
     height: 60%;
     width: 90%;
-    background: rgba(182, 213, 255, 0.8);
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -255,7 +169,7 @@ body {
 }
 
 .tech-skills-display-container-header {
-    flex: 30%;
+    flex: 20%;
     display: flex;
     align-items: center;
     color: #28282b;
@@ -267,23 +181,6 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-.tech-skills-display-top-img {
-    height: 70px;
-    width: 70px;
-    padding: 5px;
-}
-
-.tech-skills-display-top-img:hover {
-    transform: scale(1.08);
-}
-
-@media (max-width: 426px) {
-    .tech-skills-display-top-img {
-        height: 45px;
-        width: 45px;
-    }
 }
 
 .tech-skills-display-bottom {
@@ -304,40 +201,8 @@ body {
     transform: scale(1.25);
 }
 
-@media (max-width: 426px) {
-    .tech-skills-display-bottom-img {
-        height: 35px;
-        width: 35px;
-    }
-}
-
 @media (min-width: 426px) {
     .tech-skills-display-container {
         width: 45%;
     }
-}
-
-.cvWalls {
-    height: 100vh;
-    width: 100vw;
-    background-color: #9e8fb2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: white;
-}
-
-.paper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-    background: linear-gradient(
-        to bottom right,
-        rgba(255, 255, 255, 0.9),
-        rgba(255, 255, 255, 0.4)
-    );
-    border-radius: 5px;
-    transition-duration: 0.5s;
 }

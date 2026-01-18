@@ -1,6 +1,6 @@
 import * as React from "react";
-import { darkFrontFontColor } from "../../../css/colors/colors";
-import "../../../css/index.css";
+import { darkFrontFontColor } from "../css/colors";
+import "../css/index.css";
 
 type Props = {
     id: number;
@@ -10,7 +10,7 @@ type Props = {
     icons: string[];
 };
 
-const Project = ({ description, image, href, icons, id }: Props): React.ReactElement => {
+const Project = ({ description, image, href, icons, id }: Props) => {
     const [x, setX] = React.useState<number>(1);
     const [y, setY] = React.useState<number>(1);
     const [offTop, setOffTop] = React.useState<number>(0);

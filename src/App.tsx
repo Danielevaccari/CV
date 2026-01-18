@@ -1,11 +1,9 @@
 import * as React from "react";
-import TechSkillsDisplay from "./components/techSkillsDisplay/TechSkillsDisplay";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PageScrollVisualizer from "./components/pageScrollVisualizer/PageScrollVisualizer";
-import NavigationBar from "./components/navigationBar/NavigationBar";
-import ThemeProvider from "./components/theme/ThemeProvider";
-import { Projects } from "./components/projects/Projects";
-import Frontpage from "./components/frontpage/Frontpage";
+import { PageScrollVisualizer } from "./components/PageScrollVisualizer";
+import { NavigationBar } from "./components/NavigationBar";
+import { ThemeProvider } from "./components/ThemeProvider";
+import { Frontpage } from "./components/Frontpage";
 
 const App = () => {
     return (
@@ -13,18 +11,10 @@ const App = () => {
             <ThemeProvider>
                 <BrowserRouter>
                     <NavigationBar />
+                    <PageScrollVisualizer />
+
                     <Routes>
-                        <Route
-                            path="/"
-                            element={
-                                <>
-                                    <PageScrollVisualizer />
-                                    <Frontpage />
-                                    <TechSkillsDisplay />
-                                    <Projects />
-                                </>
-                            }
-                        />
+                        <Route path="/" element={<Frontpage />} />
                         <Route path="*" element={<div>Not found</div>} />
                     </Routes>
                 </BrowserRouter>

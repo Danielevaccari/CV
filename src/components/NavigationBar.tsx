@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { EThemeMode, IThemeContext, ThemeContext } from "../theme/ThemeProvider";
+import { EThemeMode, IThemeContext, ThemeContext } from "./ThemeProvider";
 import { Switch } from "@mui/material";
 
 const NavigationBar = () => {
@@ -25,7 +25,6 @@ const NavigationBar = () => {
                         color="inherit"
                         aria-label="menu"
                         sx={{ marginRight: 2 }}>
-                        {" "}
                         <MenuIcon />
                     </IconButton>
 
@@ -42,4 +41,4 @@ const NavigationBar = () => {
     );
 };
 
-export default NavigationBar;
+export { NavigationBar };

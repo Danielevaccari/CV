@@ -27,7 +27,7 @@ const FrontpageBase = ({ className }: Props) => {
                         <div className="personal-bio-right-description">
                             <h2>Welcome</h2>
                             <br />
-                            <h3>Portfolio of</h3>
+                            <h3>Portfolio</h3>
                             <h1>Daniele Vaccari</h1>
                         </div>
                     </div>

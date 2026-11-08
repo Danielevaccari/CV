@@ -9,14 +9,15 @@
     /* Glass material (opaque fallback first; translucent version in @supports below). */
     --glass-bg: #f1f1ef;
     --glass-bg-hover: #ebebe8;
-    --glass-border: rgba(28, 28, 30, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.9);
     --glass-border-hover: rgba(47, 85, 212, 0.35);
     --glass-highlight: rgba(255, 255, 255, 0.9);
-    --glass-shadow: 0 1px 3px rgba(20, 20, 40, 0.06);
-    --glass-sheen: linear-gradient(160deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 55%);
+    --glass-shadow: 0 2px 8px rgba(20, 20, 40, 0.08), 0 0 0 1px rgba(28, 28, 30, 0.05);
+    --glass-sheen: linear-gradient(160deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 60%);
     --ambient:
-        radial-gradient(60% 40% at 12% 0%, rgba(47, 85, 212, 0.07), transparent 70%),
-        radial-gradient(50% 35% at 95% 8%, rgba(14, 165, 164, 0.06), transparent 70%);
+        radial-gradient(45% 35% at 15% 12%, rgba(47, 85, 212, 0.16), transparent 70%),
+        radial-gradient(40% 32% at 88% 30%, rgba(14, 165, 164, 0.14), transparent 70%),
+        radial-gradient(45% 35% at 30% 85%, rgba(139, 92, 246, 0.12), transparent 70%);
     color-scheme: light;
 }
 
@@ -33,18 +34,19 @@
     --glass-border-hover: rgba(142, 168, 255, 0.45);
     --glass-highlight: rgba(255, 255, 255, 0.1);
     --glass-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    --glass-sheen: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 55%);
+    --glass-sheen: linear-gradient(160deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 60%);
     --ambient:
-        radial-gradient(60% 40% at 12% 0%, rgba(142, 168, 255, 0.09), transparent 70%),
-        radial-gradient(50% 35% at 95% 8%, rgba(14, 165, 164, 0.07), transparent 70%);
+        radial-gradient(45% 35% at 15% 12%, rgba(142, 168, 255, 0.18), transparent 70%),
+        radial-gradient(40% 32% at 88% 30%, rgba(14, 165, 164, 0.15), transparent 70%),
+        radial-gradient(45% 35% at 30% 85%, rgba(139, 92, 246, 0.14), transparent 70%);
     color-scheme: dark;
 }
 
 /* Glass supported: translucent surfaces that let the soft background show through. */
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
     :root {
-        --glass-bg: rgba(255, 255, 255, 0.55);
-        --glass-bg-hover: rgba(255, 255, 255, 0.75);
+        --glass-bg: rgba(255, 255, 255, 0.4);
+        --glass-bg-hover: rgba(255, 255, 255, 0.65);
     }
 
     :root[data-theme="dark"] {
@@ -53,8 +55,8 @@
     }
 
     .glass {
-        -webkit-backdrop-filter: blur(12px) saturate(125%);
-        backdrop-filter: blur(12px) saturate(125%);
+        -webkit-backdrop-filter: blur(14px) saturate(150%);
+        backdrop-filter: blur(14px) saturate(150%);
     }
 }
 
@@ -93,10 +95,26 @@
 body::before {
     content: "";
     position: fixed;
-    inset: 0;
+    inset: -15%;
     z-index: -1;
     background: var(--ambient);
     pointer-events: none;
+    animation: ambient-drift 45s ease-in-out infinite alternate;
+}
+
+@keyframes ambient-drift {
+    from {
+        transform: translate3d(-4%, -3%, 0) rotate(0deg);
+    }
+    to {
+        transform: translate3d(4%, 3%, 0) rotate(6deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+    }
 }
 
 body {

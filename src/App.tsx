@@ -8,10 +8,12 @@ import {
     Skills,
     ThemeToggle,
 } from "./components";
+import { Orbs } from "./Orbs";
 
 const App = () => (
     <div className="page">
         <ScrollProgress />
+        <Orbs />
         <ThemeToggle />
         <main>
             <Intro />

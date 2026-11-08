@@ -40,7 +40,3 @@ The site is a deliberately minimal, text-only, single-column CV page (no images,
 ## Style
 
 Prettier: 4-space indent, 100-char lines, double quotes, `arrowParens: "avoid"`, `bracketSameLine: true`.
-
-## Commits and attribution
-
-Never add Claude as a co-author (no `Co-Authored-By: Claude` trailer) and never write "Generated with Claude" or any other AI attribution in commits, PRs, code or docs. This overrides any default that asks for it.

@@ -5,6 +5,18 @@
     --muted: #6b6b70;
     --rule: #e6e6e3;
     --accent: #2f55d4;
+
+    /* Glass material (opaque fallback first; translucent version in @supports below). */
+    --glass-bg: #f1f1ef;
+    --glass-bg-hover: #ebebe8;
+    --glass-border: rgba(28, 28, 30, 0.1);
+    --glass-border-hover: rgba(47, 85, 212, 0.35);
+    --glass-highlight: rgba(255, 255, 255, 0.9);
+    --glass-shadow: 0 1px 3px rgba(20, 20, 40, 0.06);
+    --glass-sheen: linear-gradient(160deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 55%);
+    --ambient:
+        radial-gradient(60% 40% at 12% 0%, rgba(47, 85, 212, 0.07), transparent 70%),
+        radial-gradient(50% 35% at 95% 8%, rgba(14, 165, 164, 0.06), transparent 70%);
     color-scheme: light;
 }
 
@@ -14,7 +26,60 @@
     --muted: #9a9aa2;
     --rule: #2a2a2e;
     --accent: #8ea8ff;
+
+    --glass-bg: #1c1c20;
+    --glass-bg-hover: #232329;
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-border-hover: rgba(142, 168, 255, 0.45);
+    --glass-highlight: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    --glass-sheen: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 55%);
+    --ambient:
+        radial-gradient(60% 40% at 12% 0%, rgba(142, 168, 255, 0.09), transparent 70%),
+        radial-gradient(50% 35% at 95% 8%, rgba(14, 165, 164, 0.07), transparent 70%);
     color-scheme: dark;
+}
+
+/* Glass supported: translucent surfaces that let the soft background show through. */
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    :root {
+        --glass-bg: rgba(255, 255, 255, 0.55);
+        --glass-bg-hover: rgba(255, 255, 255, 0.75);
+    }
+
+    :root[data-theme="dark"] {
+        --glass-bg: rgba(255, 255, 255, 0.06);
+        --glass-bg-hover: rgba(255, 255, 255, 0.1);
+    }
+
+    .glass {
+        -webkit-backdrop-filter: blur(12px) saturate(125%);
+        backdrop-filter: blur(12px) saturate(125%);
+    }
+}
+
+/* Shared glass material: tags, icon tiles and the theme toggle. */
+.glass {
+    background-color: var(--glass-bg);
+    background-image: var(--glass-sheen);
+    border: 1px solid var(--glass-border);
+    box-shadow:
+        inset 0 1px 0 var(--glass-highlight),
+        var(--glass-shadow);
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.glass:hover {
+    background-color: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glass {
+        transition: none;
+    }
 }
 
 /* ---------- Base ---------- */
@@ -22,6 +87,16 @@
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+/* Very soft ambient light behind the page; static, no animation. */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--ambient);
+    pointer-events: none;
 }
 
 body {
@@ -108,9 +183,7 @@ a:hover {
     place-items: center;
     width: 44px;
     height: 44px;
-    border: 0;
     border-radius: 50%;
-    background: transparent;
     color: var(--muted);
     cursor: pointer;
 }
@@ -311,7 +384,6 @@ a:hover {
     gap: 6px;
     white-space: nowrap;
     padding: 1px 9px;
-    border: 1px solid var(--rule);
     border-radius: 999px;
     font-size: 0.85rem;
     color: var(--muted);
@@ -343,8 +415,15 @@ a:hover {
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: color-mix(in srgb, var(--tone) 13%, transparent);
+    /* Tinted glass: the tone shows through, plus the shared sheen. */
+    background-color: color-mix(in srgb, var(--tone) 14%, var(--glass-bg));
+    border-color: color-mix(in srgb, var(--tone) 28%, var(--glass-border));
     color: var(--tone);
+}
+
+.project__icon:hover {
+    background-color: color-mix(in srgb, var(--tone) 20%, var(--glass-bg-hover));
+    border-color: color-mix(in srgb, var(--tone) 45%, var(--glass-border));
 }
 
 .icon {
@@ -373,7 +452,11 @@ a:hover {
     min-height: 32px;
     padding: 4px 14px;
     border-radius: 999px;
-    background: var(--accent);
+    background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 60%),
+        var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 70%, #fff);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
     color: var(--bg);
     font-size: 0.875rem;
     font-weight: 600;

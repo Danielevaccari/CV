@@ -53,7 +53,7 @@ const icons: Record<ProjectIcon, { tone: string; glyph: ReactElement }> = {
 export const Icon = ({ name }: { name: ProjectIcon }) => {
     const { tone, glyph } = icons[name];
     return (
-        <span className="project__icon" style={{ "--tone": tone } as CSSProperties}>
+        <span className="project__icon glass" style={{ "--tone": tone } as CSSProperties}>
             <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
                 {glyph}
             </svg>

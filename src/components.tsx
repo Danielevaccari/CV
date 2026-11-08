@@ -70,7 +70,7 @@ export const ThemeToggle = () => {
     return (
         <button
             type="button"
-            className="theme-toggle"
+            className="theme-toggle glass"
             onClick={toggleTheme}
             aria-label={`Switch to ${next} theme`}
             title={`Switch to ${next} theme`}>
@@ -150,7 +150,7 @@ export const Skills = () => (
                             {group.items.map(item => {
                                 const icon = skillIcons[item];
                                 return (
-                                    <li key={item} className="tag">
+                                    <li key={item} className="tag glass">
                                         {icon && (
                                             <img
                                                 className={`tag__icon${icon.mono ? " tag__icon--mono" : ""}`}

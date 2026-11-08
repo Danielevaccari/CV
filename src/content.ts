@@ -49,7 +49,7 @@ export type SkillGroup = {
     readonly featured?: boolean;
 };
 
-export type ProjectIcon = "hedera" | "cards" | "chart";
+export type ProjectIcon = "cube" | "hedera" | "cards" | "chart";
 
 export type Project = {
     readonly title: string;
@@ -178,6 +178,14 @@ export const skills: ReadonlyArray<SkillGroup> = [
 ];
 
 export const projects: ReadonlyArray<Project> = [
+    {
+        title: "Hedera Mainnet Consensus 3D",
+        icon: "cube",
+        description:
+            "A live 3D view of Hedera mainnet: real nodes sized by stake, and every transaction at its consensus timestamp.",
+        link: { label: "Live site", href: "https://hedera-3d.netlify.app" },
+        stack: ["React", "TypeScript", "three.js"],
+    },
     {
         title: "Paradox Hedera",
         icon: "hedera",

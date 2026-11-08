@@ -4,6 +4,16 @@ import type { ProjectIcon } from "./content";
 // 24×24 icons drawn with currentColor. Each project has its own colour ("tone"),
 // shown on a soft tile of the same colour.
 const icons: Record<ProjectIcon, { tone: string; glyph: ReactElement }> = {
+    // Isometric 3D cube.
+    cube: {
+        tone: "#0ea5a4",
+        glyph: (
+            <>
+                <path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7z" />
+                <path d="M3.5 7 12 11.5 20.5 7M12 11.5v10" />
+            </>
+        ),
+    },
     // Hedera Hashgraph logo: a solid circle with a double-crossbar "H" cut out.
     hedera: {
         tone: "var(--text)",

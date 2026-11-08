@@ -7,7 +7,7 @@
         <meta
             name="description"
             content="Daniele Vaccari: full-stack developer (.NET / React) building production planning (APS) systems, focused on agentic AI development with Claude Code and MCP." />
-        <meta name="theme-color" content="#121214" />
+        <meta name="theme-color" content="#fbfbfa" />
         <link rel="canonical" href="https://vaccaridaniele.com/" />
 
         <!-- Link previews (LinkedIn, Slack, Teams, X, ...) -->
@@ -64,18 +64,13 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
         <script>
-            // Apply the saved (or system) theme before first paint to avoid a flash.
+            // Apply the visitor's saved theme before first paint; light is the default.
             (function () {
                 var theme;
                 try {
                     theme = localStorage.getItem("theme");
                 } catch (e) {}
-                if (theme !== "light" && theme !== "dark") {
-                    theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-                        ? "dark"
-                        : "light";
-                }
-                document.documentElement.dataset.theme = theme;
+                document.documentElement.dataset.theme = theme === "dark" ? "dark" : "light";
             })();
         </script>
     </head>

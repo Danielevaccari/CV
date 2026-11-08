@@ -25,7 +25,7 @@ The site is a deliberately minimal, text-only, single-column CV page (no images,
 - **Content vs. presentation:** all site copy (profile, experience, skills, projects, education, languages) lives in `src/content.ts`, mirroring the owner's PDF CV. `src/components.tsx` holds small presentational section components that only render that data; `src/App.tsx` sets section order. Optional fields (`profile.links`, `project.link`, `project.stack`) render nothing when absent.
 - **Public-safe content:** this is a public site. Never add the phone number, email or home address from the CV to `content.ts` or any other file — only public links (GitHub, live project URLs, thesis URN).
 - **Styling:** one global stylesheet, `src/styles.css`, BEM-ish class names, no CSS-in-JS or UI library. Light/dark theming via CSS custom properties on `:root` and `:root[data-theme="dark"]`. Mobile-first: sections stack on narrow screens and become a label column + content grid at `min-width: 640px`.
-- **Theme flow:** an inline script in `public/index.html` sets `document.documentElement.dataset.theme` before first paint (from `localStorage["theme"]`, else `prefers-color-scheme`) to avoid a flash. `src/useTheme.ts` reads that initial value and persists changes. Keep the storage key and attribute in sync between the two.
+- **Theme flow:** an inline script in `public/index.html` sets `document.documentElement.dataset.theme` before first paint (from `localStorage["theme"]`, defaulting to light) to avoid a flash. `src/useTheme.ts` reads that initial value and persists changes. Keep the storage key and attribute in sync between the two.
 - JSX uses the automatic runtime (`react-jsx`), so components don't import React. `public/_redirects` is a Netlify SPA fallback.
 
 ## Dependency pins

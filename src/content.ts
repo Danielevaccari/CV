@@ -69,15 +69,15 @@ export type Education = {
 export const profile = {
     name: "Daniele Johannes Vaccari",
     role: "Full-Stack Developer",
-    focus: "Agentic AI Development · Production Planning Systems (APS)",
+    focus: "Agentic AI Development · Production Planning & Execution Systems (APS / MES)",
     summary:
-        "Full-stack developer (**.NET / React**) with **4.5+ years** building production planning (APS) applications for large wood and food industry manufacturers, owning features from design through go-live and production support. Using AI in development daily since 2022, now focused on **agentic coding**: a **Claude Code harness** and **MCP endpoints** that let AI agents work directly with the application.",
+        "Full-stack developer (**.NET / React**) with **4.5+ years** building production planning (APS) and manufacturing execution (MES) systems for **forest and food industry** manufacturers, in teams of 4–8. I own features from the first build through acceptance testing and go-live to production support. Using AI in development daily since 2022, now focused on **agentic coding**: a **Claude Code harness** and **MCP endpoints** that let AI agents work directly with the application.",
     links: [{ label: "GitHub", href: "https://github.com/Danielevaccari" }] as ReadonlyArray<Link>,
 };
 
 export const experience: ReadonlyArray<Job> = [
     {
-        role: "Web Application Developer (Full-Stack), APS",
+        role: "Web Application Developer (Full-Stack)",
         company: "Pinja Oy",
         period: "Mar 2022 – Present",
         highlights: [
@@ -92,34 +92,20 @@ export const experience: ReadonlyArray<Job> = [
                 ],
             },
             {
-                label: "Production planning",
+                label: "Deliveries",
                 items: [
                     {
-                        title: "Volume planning",
-                        detail: "Long-horizon capacity and output planning",
+                        title: "Long-term planning",
+                        detail: "Months-ahead planning with load levelling",
+                    },
+                    { title: "LVL mill MES", detail: "Build to go-live: billets, sawing, SAP" },
+                    {
+                        title: "Food planning",
+                        detail: "Freshness-aware planning and MRP, live rollout",
                     },
                     {
-                        title: "Billet planning",
-                        detail: "2-click process that reduces material waste",
-                    },
-                    {
-                        title: "Routing logic",
-                        detail: "Dynamic order-specific work stages and routing",
-                    },
-                    { title: "Integrations", detail: "Incl. a standardized calendar integration" },
-                ],
-            },
-            {
-                label: "Delivery",
-                items: [
-                    { title: "Ownership & QA", detail: "Requirements to go-live, in teams of 4–8" },
-                    {
-                        title: "Production support",
-                        detail: "Technical support for live production systems",
-                    },
-                    {
-                        title: "Releases",
-                        detail: "Octopus Deploy, Docker, Azure DevOps CI/CD",
+                        title: "Sawmill MES",
+                        detail: "Multi-mill rollout: kiln/storage maps, quality",
                     },
                 ],
             },
@@ -180,11 +166,15 @@ export const skills: ReadonlyArray<SkillGroup> = [
         label: "Domain",
         items: [
             "APS",
-            "Manufacturing (wood, food)",
-            "Volume & billet planning",
-            "System integrations",
+            "MES",
+            "MRP",
+            "Load levelling",
+            "Capacity planning",
+            "Traceability",
+            "ERP (SAP) integration",
         ],
     },
+    { label: "Industries", items: ["Forest industry (LVL, sawmills)", "Food industry"] },
 ];
 
 export const projects: ReadonlyArray<Project> = [

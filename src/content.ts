@@ -45,8 +45,6 @@ export type Job = {
 export type SkillGroup = {
     readonly label: string;
     readonly items: ReadonlyArray<string>;
-    /** Accent this group's tags. */
-    readonly featured?: boolean;
 };
 
 export type ProjectIcon = "cube" | "hedera" | "cards" | "chart";
@@ -153,7 +151,6 @@ export const skills: ReadonlyArray<SkillGroup> = [
     { label: "DevOps", items: ["Git", "Azure DevOps", "CI/CD", "Octopus Deploy", "Docker"] },
     {
         label: "AI",
-        featured: true,
         items: [
             "Claude Code",
             "Agentic coding",

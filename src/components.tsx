@@ -146,7 +146,7 @@ export const Skills = () => (
                 <div key={group.label} className="skills__row">
                     <dt>{group.label}</dt>
                     <dd>
-                        <ul className={`tags${group.featured ? " tags--featured" : ""}`}>
+                        <ul className="tags">
                             {group.items.map(item => {
                                 const icon = skillIcons[item];
                                 return (

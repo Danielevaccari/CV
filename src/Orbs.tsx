@@ -11,8 +11,8 @@ type Orb = {
     drops: CSSProperties[];
 };
 
-// Each ball keeps to its own side of the page so the two never overlap.
-const xRange: Record<Slot, [number, number]> = { 0: [-34, -14], 1: [14, 34] };
+// Each ball keeps to its own side margin, away from the text (see .orb in styles.css).
+const side: Record<Slot, string> = { 0: "-1", 1: "1" };
 
 const random = (min: number, max: number) => min + Math.random() * (max - min);
 
@@ -32,14 +32,14 @@ const makeDrops = (): CSSProperties[] =>
 let nextId = 0;
 
 const makeOrb = (slot: Slot): Orb => {
-    const [x0, x1] = xRange[slot];
     const vars: Record<string, string> = {
-        "--dur": `${random(22, 34).toFixed(1)}s`,
-        "--morph": `${random(8, 13).toFixed(1)}s`,
+        "--side": side[slot],
+        "--dur": `${random(40, 60).toFixed(1)}s`,
+        "--morph": `${random(10, 16).toFixed(1)}s`,
     };
     for (let i = 0; i < 3; i++) {
-        vars[`--x${i}`] = `${random(x0, x1).toFixed(1)}vw`;
-        vars[`--y${i}`] = `${random(-30, 34).toFixed(1)}vh`;
+        vars[`--x${i}`] = `${random(-18, 18).toFixed(1)}px`;
+        vars[`--y${i}`] = `${random(-34, 34).toFixed(1)}vh`;
     }
     return { id: nextId++, slot, popping: false, style: vars as CSSProperties, drops: makeDrops() };
 };

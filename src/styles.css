@@ -105,7 +105,12 @@
  * is always the opposite colour of the ball. Tapping one pops it.
  */
 .orb {
-    --size: min(26vmin, 200px);
+    /* Small ball sized to fit the empty margin beside the 760px text column. */
+    --size: clamp(36px, calc((100vw - 760px) * 0.35), 90px);
+    /* Horizontal lane: the middle of the left or right margin. */
+    --lane: calc(var(--side) * (25vw + 190px));
+    --ys: 1;
+    --yo: 0px;
     --slow: 1;
     position: fixed;
     z-index: 5;
@@ -120,7 +125,16 @@
 }
 
 .orb--1 {
-    --size: min(22vmin, 170px);
+    --size: clamp(32px, calc((100vw - 760px) * 0.28), 72px);
+}
+
+/* Narrow screens have no margin: keep the balls small and low, near the page edges. */
+@media (max-width: 760px) {
+    .orb {
+        --lane: calc(var(--side) * 34vw);
+        --ys: 0.25;
+        --yo: 36vh;
+    }
 }
 
 .orb__body {
@@ -170,13 +184,25 @@
 
 @keyframes orb-drift {
     0% {
-        transform: translate3d(var(--x0), var(--y0), 0);
+        transform: translate3d(
+            calc(var(--lane) + var(--x0)),
+            calc(var(--y0) * var(--ys) + var(--yo)),
+            0
+        );
     }
     50% {
-        transform: translate3d(var(--x1), var(--y1), 0);
+        transform: translate3d(
+            calc(var(--lane) + var(--x1)),
+            calc(var(--y1) * var(--ys) + var(--yo)),
+            0
+        );
     }
     100% {
-        transform: translate3d(var(--x2), var(--y2), 0);
+        transform: translate3d(
+            calc(var(--lane) + var(--x2)),
+            calc(var(--y2) * var(--ys) + var(--yo)),
+            0
+        );
     }
 }
 
@@ -516,6 +542,7 @@ a:hover {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    max-width: 100%;
     white-space: nowrap;
     padding: 1px 9px;
     border-radius: 999px;
@@ -528,6 +555,13 @@ a:hover {
     width: 14px;
     height: 14px;
     object-fit: contain;
+}
+
+/* A very long tag (e.g. the integrations one) may wrap inside its pill on phones. */
+@media (max-width: 640px) {
+    .tag {
+        white-space: normal;
+    }
 }
 
 /* Black single-colour icons would vanish on the dark background. */

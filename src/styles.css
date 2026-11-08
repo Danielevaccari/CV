@@ -23,9 +23,6 @@
             rgba(255, 255, 255, 0) 52%
         ),
         linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 70%);
-    /* Near shapes: with a difference blend these become deep ink colours on the light page. */
-    --orb-1: #efe9d8;
-    --orb-2: #f2e6e6;
     color-scheme: light;
 }
 
@@ -50,9 +47,6 @@
             rgba(255, 255, 255, 0) 52%
         ),
         linear-gradient(160deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0) 70%);
-    /* On the dark page the same blend gives pale tints with dark text. */
-    --orb-1: #dae9ff;
-    --orb-2: #c8f2ee;
     color-scheme: dark;
 }
 
@@ -107,8 +101,8 @@
 
 /*
  * Two sharp-edged fluid balls that drift across the page (see Orbs.tsx). They sit above
- * the content with mix-blend-mode: difference, so they read as dark balls on the light
- * theme and any text they pass over inverts to stay readable. Tapping one pops it.
+ * the content and invert whatever is behind them (see .orb__body), so text under a ball
+ * is always the opposite colour of the ball. Tapping one pops it.
  */
 .orb {
     --size: min(26vmin, 200px);
@@ -120,7 +114,6 @@
     width: var(--size);
     aspect-ratio: 1;
     margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
-    mix-blend-mode: difference;
     cursor: pointer;
     will-change: transform;
     animation: orb-drift calc(var(--dur) * var(--slow)) ease-in-out infinite alternate;
@@ -134,13 +127,8 @@
     display: block;
     width: 100%;
     height: 100%;
-    background: var(--orb-1);
     border-radius: 58% 42% 47% 53% / 52% 46% 54% 48%;
     animation: orb-morph calc(var(--morph) * var(--slow)) ease-in-out infinite alternate;
-}
-
-.orb--1 .orb__body {
-    background: var(--orb-2);
 }
 
 .orb--popping {
@@ -149,6 +137,23 @@
 
 .orb--popping .orb__body {
     animation: orb-pop 0.5s ease-out forwards;
+}
+
+/*
+ * The ball inverts what is behind it to pure black and white: on the light page it is
+ * a black ball with white text, on the dark page a white ball with black text.
+ */
+.orb__body,
+.orb__drop {
+    -webkit-backdrop-filter: grayscale(1) contrast(1000%) invert(1);
+    backdrop-filter: grayscale(1) contrast(1000%) invert(1);
+}
+
+/* Without backdrop-filter the ball could not keep text readable, so hide it. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .orb {
+        display: none;
+    }
 }
 
 /* Droplets flung out when a ball bursts. */
@@ -160,12 +165,7 @@
     aspect-ratio: 1;
     margin: calc(var(--size) * var(--s) / -2) 0 0 calc(var(--size) * var(--s) / -2);
     border-radius: 50%;
-    background: var(--orb-1);
     animation: orb-drop 0.5s cubic-bezier(0.1, 0.7, 0.3, 1) forwards;
-}
-
-.orb--1 .orb__drop {
-    background: var(--orb-2);
 }
 
 @keyframes orb-drift {

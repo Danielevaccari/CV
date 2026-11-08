@@ -44,6 +44,13 @@ const makeOrb = (slot: Slot): Orb => {
     return { id: nextId++, slot, popping: false, style: vars as CSSProperties, drops: makeDrops() };
 };
 
+// Balls slip away from a nearby mouse cursor, but slowly enough that a quick lunge can
+// still catch one. Touch screens have no cursor, so they skip this. It only reacts to the
+// visitor's own mouse movement, so it also runs with reduced motion on.
+const DODGE_REACH = 3.5; // in ball radii
+const DODGE_PUSH = 0.28;
+const DODGE_EASE = 0.1;
+
 // A popped ball stays gone for a while before a new one drifts in.
 const RESPAWN_MIN_MS = 6000;
 const RESPAWN_MAX_MS = 12000;
@@ -56,6 +63,55 @@ export const Orbs = () => {
         setOrbs(list => list.map(orb => (orb.id === id ? { ...orb, popping: true } : orb)));
 
     const timers = useRef<number[]>([]);
+    const container = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const offsets = new Map<HTMLElement, { x: number; y: number }>();
+        let px = -1e4;
+        let py = -1e4;
+        let frame = 0;
+
+        const tick = () => {
+            frame = 0;
+            let moving = false;
+            container.current
+                ?.querySelectorAll<HTMLElement>(".orb:not(.orb--popping)")
+                .forEach(el => {
+                    const offset = offsets.get(el) ?? { x: 0, y: 0 };
+                    const rect = el.getBoundingClientRect();
+                    const radius = rect.width / 2;
+                    // Where the ball would be without the dodge offset.
+                    const dx = rect.left + radius - offset.x - px;
+                    const dy = rect.top + radius - offset.y - py;
+                    const distance = Math.hypot(dx, dy) || 1;
+                    const reach = radius * DODGE_REACH;
+                    const push = distance < reach ? (reach - distance) * DODGE_PUSH : 0;
+                    const targetX = (dx / distance) * push;
+                    const targetY = (dy / distance) * push;
+                    offset.x += (targetX - offset.x) * DODGE_EASE;
+                    offset.y += (targetY - offset.y) * DODGE_EASE;
+                    offsets.set(el, offset);
+                    el.style.translate = `${offset.x.toFixed(1)}px ${offset.y.toFixed(1)}px`;
+                    if (push > 0 || Math.hypot(targetX - offset.x, targetY - offset.y) > 0.3) {
+                        moving = true;
+                    }
+                });
+            if (moving) frame = requestAnimationFrame(tick);
+        };
+
+        const onMove = (event: PointerEvent) => {
+            if (event.pointerType !== "mouse") return;
+            px = event.clientX;
+            py = event.clientY;
+            if (!frame) frame = requestAnimationFrame(tick);
+        };
+
+        window.addEventListener("pointermove", onMove, { passive: true });
+        return () => {
+            window.removeEventListener("pointermove", onMove);
+            cancelAnimationFrame(frame);
+        };
+    }, []);
 
     useEffect(() => {
         const pending = timers.current;
@@ -73,7 +129,7 @@ export const Orbs = () => {
     };
 
     return (
-        <div aria-hidden="true">
+        <div ref={container} aria-hidden="true">
             {orbs.map(orb => (
                 <div
                     key={orb.id}

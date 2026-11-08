@@ -2,7 +2,7 @@
 :root {
     --bg: #fbfbfa;
     --text: #1c1c1e;
-    --muted: #6b6b70;
+    --muted: #5c5c61;
     --rule: #e6e6e3;
     --accent: #2f55d4;
 
@@ -23,10 +23,9 @@
             rgba(255, 255, 255, 0) 52%
         ),
         linear-gradient(160deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%);
-    --ambient:
-        radial-gradient(45% 35% at 15% 12%, rgba(47, 85, 212, 0.24), transparent 70%),
-        radial-gradient(40% 32% at 88% 30%, rgba(14, 165, 164, 0.22), transparent 70%),
-        radial-gradient(45% 35% at 30% 85%, rgba(139, 92, 246, 0.2), transparent 70%);
+    --orb-1: rgba(47, 85, 212, 0.2);
+    --orb-2: rgba(14, 165, 164, 0.18);
+    --orb-3: rgba(139, 92, 246, 0.16);
     color-scheme: light;
 }
 
@@ -51,10 +50,9 @@
             rgba(255, 255, 255, 0) 52%
         ),
         linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 70%);
-    --ambient:
-        radial-gradient(45% 35% at 15% 12%, rgba(142, 168, 255, 0.26), transparent 70%),
-        radial-gradient(40% 32% at 88% 30%, rgba(14, 165, 164, 0.24), transparent 70%),
-        radial-gradient(45% 35% at 30% 85%, rgba(139, 92, 246, 0.24), transparent 70%);
+    --orb-1: rgba(110, 140, 255, 0.2);
+    --orb-2: rgba(20, 184, 183, 0.18);
+    --orb-3: rgba(167, 120, 255, 0.18);
     color-scheme: dark;
 }
 
@@ -107,28 +105,101 @@
     box-sizing: border-box;
 }
 
-/* Very soft ambient light behind the page; static, no animation. */
-body::before {
+/*
+ * Three slow, fluid orbs behind the text. They are fixed to the viewport and drift
+ * around its centre, so they always sit behind some of the content. The glass
+ * tags and tiles blur them.
+ */
+body::before,
+body::after,
+#root::before {
     content: "";
     position: fixed;
-    inset: -15%;
     z-index: -1;
-    background: var(--ambient);
+    top: 50%;
+    left: 50%;
+    width: min(46vmax, 420px);
+    aspect-ratio: 1;
+    margin: calc(min(46vmax, 420px) / -2) 0 0 calc(min(46vmax, 420px) / -2);
+    border-radius: 58% 42% 47% 53% / 52% 46% 54% 48%;
+    filter: blur(26px);
     pointer-events: none;
-    animation: ambient-drift 45s ease-in-out infinite alternate;
+    will-change: transform, border-radius;
 }
 
-@keyframes ambient-drift {
-    from {
-        transform: translate3d(-4%, -3%, 0) rotate(0deg);
+body::before {
+    background: var(--orb-1);
+    animation:
+        orb-a 70s ease-in-out infinite alternate,
+        orb-morph 23s ease-in-out infinite alternate;
+}
+
+body::after {
+    background: var(--orb-2);
+    animation:
+        orb-b 85s ease-in-out infinite alternate,
+        orb-morph 29s ease-in-out infinite alternate-reverse;
+}
+
+#root::before {
+    background: var(--orb-3);
+    animation:
+        orb-c 100s ease-in-out infinite alternate,
+        orb-morph 37s ease-in-out infinite alternate;
+}
+
+@keyframes orb-a {
+    0% {
+        transform: translate3d(-22vw, -26vh, 0);
     }
-    to {
-        transform: translate3d(4%, 3%, 0) rotate(6deg);
+    50% {
+        transform: translate3d(8vw, 6vh, 0);
+    }
+    100% {
+        transform: translate3d(-12vw, 28vh, 0);
+    }
+}
+
+@keyframes orb-b {
+    0% {
+        transform: translate3d(24vw, -10vh, 0);
+    }
+    50% {
+        transform: translate3d(-6vw, 24vh, 0);
+    }
+    100% {
+        transform: translate3d(18vw, 26vh, 0);
+    }
+}
+
+@keyframes orb-c {
+    0% {
+        transform: translate3d(-4vw, 28vh, 0);
+    }
+    50% {
+        transform: translate3d(14vw, -22vh, 0);
+    }
+    100% {
+        transform: translate3d(-20vw, -4vh, 0);
+    }
+}
+
+@keyframes orb-morph {
+    0% {
+        border-radius: 58% 42% 47% 53% / 52% 46% 54% 48%;
+    }
+    50% {
+        border-radius: 44% 56% 58% 42% / 56% 44% 50% 50%;
+    }
+    100% {
+        border-radius: 52% 48% 40% 60% / 45% 58% 42% 55%;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    body::before {
+    body::before,
+    body::after,
+    #root::before {
         animation: none;
     }
 }

@@ -28,7 +28,12 @@ module.exports = (_env, argv) => {
                         options: {
                             presets: [
                                 "@babel/preset-env",
-                                ["@babel/preset-react", { runtime: "automatic" }],
+                                [
+                                    "@babel/preset-react",
+                                    // Set explicitly: Babel otherwise reads NODE_ENV, which is unset
+                                    // in CI builds, and emits dev-only jsxDEV calls in production.
+                                    { runtime: "automatic", development: !isProduction },
+                                ],
                                 "@babel/preset-typescript",
                             ],
                         },

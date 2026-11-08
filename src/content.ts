@@ -77,7 +77,7 @@ export const profile = {
 
 export const experience: ReadonlyArray<Job> = [
     {
-        role: "Web Application Developer (Full-Stack)",
+        role: "Software Developer",
         company: "Pinja Oy",
         period: "Mar 2022 – Present",
         highlights: [

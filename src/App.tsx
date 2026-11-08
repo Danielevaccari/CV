@@ -1,26 +1,27 @@
-import * as React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { PageScrollVisualizer } from "./components/PageScrollVisualizer";
-import { NavigationBar } from "./components/NavigationBar";
-import { ThemeProvider } from "./components/ThemeProvider";
-import { Frontpage } from "./components/Frontpage";
+import {
+    EducationAndLanguages,
+    Experience,
+    Footer,
+    Intro,
+    Projects,
+    ScrollProgress,
+    Skills,
+    ThemeToggle,
+} from "./components";
 
-const App = () => {
-    return (
-        <>
-            <ThemeProvider>
-                <BrowserRouter>
-                    <NavigationBar />
-                    <PageScrollVisualizer />
-
-                    <Routes>
-                        <Route path="/" element={<Frontpage />} />
-                        <Route path="*" element={<div>Not found</div>} />
-                    </Routes>
-                </BrowserRouter>
-            </ThemeProvider>
-        </>
-    );
-};
+const App = () => (
+    <div className="page">
+        <ScrollProgress />
+        <ThemeToggle />
+        <main>
+            <Intro />
+            <Experience />
+            <Skills />
+            <Projects />
+            <EducationAndLanguages />
+        </main>
+        <Footer />
+    </div>
+);
 
 export default App;

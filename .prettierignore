@@ -1,2 +1,5 @@
 dist/
-*.md
+*.mdbuild/
+backend/
+node_modules/
+yarn.lock

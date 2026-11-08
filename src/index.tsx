@@ -1,18 +1,13 @@
-import * as React from "react";
-import ReactDOM from "react-dom";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import App from "./App";
-import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import "./styles.css";
 
-const rootElement =
-    (document.getElementById("root") as HTMLElement) ||
-    (document.createElement<"div">("div") as HTMLElement);
+const container = document.getElementById("root");
+if (!container) throw new Error("Missing #root element in index.html");
 
-ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </React.StrictMode>,
-    rootElement
+createRoot(container).render(
+    <StrictMode>
+        <App />
+    </StrictMode>
 );

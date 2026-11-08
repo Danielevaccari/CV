@@ -66,10 +66,10 @@ export type Education = {
 
 export const profile = {
     name: "Daniele Johannes Vaccari",
-    role: "Full-Stack Developer",
+    role: "Full-Stack Web Developer",
     focus: "Agentic AI Development · Production Planning & Execution Systems (APS / MES)",
     summary:
-        "Full-stack developer (**.NET / React**) with **4.5+ years** building production planning (APS) and manufacturing execution (MES) systems for **forest and food industry** manufacturers, in teams of 4–8. I own features from the first build through acceptance testing and go-live to production support. I have used AI in development daily since 2022 and now focus on **agentic coding**: a **Claude Code harness** and **MCP endpoints** that let AI agents work directly with the application.",
+        "Full-stack web developer (**.NET / React**) with **4.5+ years** building production planning (APS) and manufacturing execution (MES) systems for **forest and food industry** manufacturers, in teams of 4–8. I own features from the first build through acceptance testing and go-live to production support. I have used AI in development daily since 2022 and now focus on **agentic coding**: a **Claude Code harness** and **MCP endpoints** that let AI agents work directly with the application.",
     links: [{ label: "GitHub", href: "https://github.com/Danielevaccari" }] as ReadonlyArray<Link>,
 };
 
@@ -93,10 +93,13 @@ export const experience: ReadonlyArray<Job> = [
                 label: "Deliveries",
                 items: [
                     {
-                        title: "Long-term planning",
-                        detail: "Months-ahead planning with load levelling",
+                        title: "LVL mill MES",
+                        detail: "Build to go-live: billets, sawing, custom SAP integration",
                     },
-                    { title: "LVL mill MES", detail: "Build to go-live: billets, sawing, SAP" },
+                    {
+                        title: "Long-term planning",
+                        detail: "Months or years ahead, with bottleneck levelling",
+                    },
                     {
                         title: "Food planning",
                         detail: "Freshness-aware planning and MRP, live rollout",
@@ -168,7 +171,7 @@ export const skills: ReadonlyArray<SkillGroup> = [
             "Load levelling",
             "Capacity planning",
             "Traceability",
-            "ERP (SAP) integration",
+            "ERP (SAP) and custom customer integrations",
         ],
     },
     { label: "Industries", items: ["Forest industry (LVL, sawmills)", "Food industry"] },

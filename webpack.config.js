@@ -45,7 +45,9 @@ module.exports = (_env, argv) => {
                 },
                 {
                     test: /\.(svg|png|jpe?g|webp)$/,
-                    type: "asset/resource",
+                    // Small icons are inlined as data URLs; larger files stay separate.
+                    type: "asset",
+                    parser: { dataUrlCondition: { maxSize: 12 * 1024 } },
                 },
             ],
         },

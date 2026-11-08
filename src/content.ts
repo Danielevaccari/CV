@@ -1,6 +1,23 @@
 // All site copy lives here, so updating the CV never means touching components.
 // Wrap a phrase in **double asterisks** to highlight it.
 // Keep it public-safe: no phone number, email or home address.
+import azureDevopsIcon from "./assets/skills/azure-devops.svg";
+import ciCdIcon from "./assets/skills/ci-cd.svg";
+import claudeCodeIcon from "./assets/skills/claude-code.svg";
+import csharpIcon from "./assets/skills/csharp.svg";
+import cypressIcon from "./assets/skills/cypress.svg";
+import dockerIcon from "./assets/skills/docker.svg";
+import dotnetIcon from "./assets/skills/dotnet.svg";
+import entityFrameworkIcon from "./assets/skills/entity-framework.svg";
+import gitIcon from "./assets/skills/git.svg";
+import jestIcon from "./assets/skills/jest.svg";
+import mcpIcon from "./assets/skills/mcp.svg";
+import octopusDeployIcon from "./assets/skills/octopus-deploy.svg";
+import playwrightIcon from "./assets/skills/playwright.svg";
+import reactIcon from "./assets/skills/react.svg";
+import sqlIcon from "./assets/skills/sql.svg";
+import sqlServerIcon from "./assets/skills/sql-server.svg";
+import typescriptIcon from "./assets/skills/typescript.svg";
 
 export type Link = {
     readonly label: string;
@@ -109,6 +126,38 @@ export const experience: ReadonlyArray<Job> = [
         ],
     },
 ];
+
+export type SkillIcon = {
+    readonly src: string;
+    /** Single-colour (black) icon: inverted in dark mode so it stays visible. */
+    readonly mono?: boolean;
+};
+
+/**
+ * Brand icons for skill tags, keyed by the exact skill name. Skills without an entry
+ * (concepts like "Agentic coding" or domain knowledge) render as plain text.
+ * Sources: devicon (MIT) and Simple Icons (CC0), in their official colours.
+ */
+export const skillIcons: Readonly<Record<string, SkillIcon>> = {
+    React: { src: reactIcon },
+    TypeScript: { src: typescriptIcon },
+    ".NET": { src: dotnetIcon },
+    "C#": { src: csharpIcon },
+    "ASP.NET Core": { src: dotnetIcon },
+    "Entity Framework": { src: entityFrameworkIcon },
+    SQL: { src: sqlIcon, mono: true },
+    "SQL Server": { src: sqlServerIcon },
+    Cypress: { src: cypressIcon },
+    Playwright: { src: playwrightIcon },
+    Jest: { src: jestIcon },
+    Git: { src: gitIcon },
+    "Azure DevOps": { src: azureDevopsIcon },
+    "CI/CD": { src: ciCdIcon, mono: true },
+    "Octopus Deploy": { src: octopusDeployIcon },
+    Docker: { src: dockerIcon },
+    "Claude Code": { src: claudeCodeIcon },
+    "MCP servers": { src: mcpIcon, mono: true },
+};
 
 export const skills: ReadonlyArray<SkillGroup> = [
     { label: "Frontend", items: ["React", "TypeScript"] },

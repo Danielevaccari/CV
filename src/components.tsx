@@ -1,5 +1,5 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import { education, experience, languages, profile, projects, skills } from "./content";
+import { education, experience, languages, profile, projects, skillIcons, skills } from "./content";
 import { Icon } from "./icons";
 import { useTheme } from "./useTheme";
 
@@ -139,11 +139,23 @@ export const Skills = () => (
                     <dt>{group.label}</dt>
                     <dd>
                         <ul className={`tags${group.featured ? " tags--featured" : ""}`}>
-                            {group.items.map(item => (
-                                <li key={item} className="tag">
-                                    {item}
-                                </li>
-                            ))}
+                            {group.items.map(item => {
+                                const icon = skillIcons[item];
+                                return (
+                                    <li key={item} className="tag">
+                                        {icon && (
+                                            <img
+                                                className={`tag__icon${icon.mono ? " tag__icon--mono" : ""}`}
+                                                src={icon.src}
+                                                alt=""
+                                                width={14}
+                                                height={14}
+                                            />
+                                        )}
+                                        {item}
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </dd>
                 </div>

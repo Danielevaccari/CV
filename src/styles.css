@@ -308,12 +308,27 @@ a:hover {
 }
 
 .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     white-space: nowrap;
     padding: 1px 9px;
     border: 1px solid var(--rule);
     border-radius: 999px;
     font-size: 0.85rem;
     color: var(--muted);
+}
+
+.tag__icon {
+    flex: none;
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+/* Black single-colour icons would vanish on the dark background. */
+:root[data-theme="dark"] .tag__icon--mono {
+    filter: invert(1);
 }
 
 .tags--featured .tag {

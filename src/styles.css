@@ -23,6 +23,11 @@
             rgba(255, 255, 255, 0) 52%
         ),
         linear-gradient(160deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%);
+    /* Near shapes: with a difference blend these become deep ink colours on the light page. */
+    --orb-1: #efe9d8;
+    --orb-2: #f2e6e6;
+    --far-1: rgba(47, 85, 212, 0.14);
+    --far-2: rgba(14, 165, 164, 0.12);
     color-scheme: light;
 }
 
@@ -47,6 +52,11 @@
             rgba(255, 255, 255, 0) 52%
         ),
         linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 70%);
+    /* On the dark page the same blend gives pale tints with dark text. */
+    --orb-1: #dae9ff;
+    --orb-2: #c8f2ee;
+    --far-1: rgba(110, 140, 255, 0.2);
+    --far-2: rgba(20, 184, 183, 0.16);
     color-scheme: dark;
 }
 
@@ -106,9 +116,8 @@
  * so some text is always behind one.
  */
 body::before,
-body::after,
-#root::before {
-    --size: min(30vmax, 260px);
+body::after {
+    --size: min(26vmin, 200px);
     content: "";
     position: fixed;
     z-index: 5;
@@ -117,7 +126,6 @@ body::after,
     width: var(--size);
     aspect-ratio: 1;
     margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
-    background: #fff;
     mix-blend-mode: difference;
     border-radius: 58% 42% 47% 53% / 52% 46% 54% 48%;
     pointer-events: none;
@@ -125,58 +133,41 @@ body::after,
 }
 
 body::before {
+    background: var(--orb-1);
     animation:
         orb-a 24s ease-in-out infinite alternate,
         orb-morph 9s ease-in-out infinite alternate;
 }
 
 body::after {
-    --size: min(24vmax, 200px);
+    --size: min(22vmin, 170px);
+    background: var(--orb-2);
     animation:
         orb-b 30s ease-in-out infinite alternate,
         orb-morph 11s ease-in-out infinite alternate-reverse;
 }
 
-#root::before {
-    --size: min(18vmax, 150px);
-    animation:
-        orb-c 36s ease-in-out infinite alternate,
-        orb-morph 13s ease-in-out infinite alternate;
-}
-
 @keyframes orb-a {
     0% {
-        transform: translate3d(-30vw, -30vh, 0);
+        transform: translate3d(-34vw, -30vh, 0);
     }
     50% {
-        transform: translate3d(14vw, 10vh, 0);
+        transform: translate3d(-14vw, 8vh, 0);
     }
     100% {
-        transform: translate3d(-8vw, 34vh, 0);
+        transform: translate3d(-26vw, 34vh, 0);
     }
 }
 
 @keyframes orb-b {
     0% {
-        transform: translate3d(32vw, -14vh, 0);
+        transform: translate3d(30vw, -12vh, 0);
     }
     50% {
-        transform: translate3d(-12vw, 28vh, 0);
+        transform: translate3d(14vw, 28vh, 0);
     }
     100% {
-        transform: translate3d(22vw, 32vh, 0);
-    }
-}
-
-@keyframes orb-c {
-    0% {
-        transform: translate3d(-6vw, 34vh, 0);
-    }
-    50% {
-        transform: translate3d(20vw, -28vh, 0);
-    }
-    100% {
-        transform: translate3d(-28vw, -2vh, 0);
+        transform: translate3d(34vw, 30vh, 0);
     }
 }
 
@@ -192,6 +183,60 @@ body::after {
     }
 }
 
+/*
+ * Far layer: two large, slow, soft shapes behind the text. The glass tags and tiles
+ * frost them, and being bigger, blurrier and slower than the sharp shapes they read
+ * as further away.
+ */
+html::before,
+html::after {
+    --size: min(70vmax, 640px);
+    content: "";
+    position: fixed;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: var(--size);
+    aspect-ratio: 1;
+    margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+    border-radius: 55% 45% 50% 50% / 48% 54% 46% 52%;
+    filter: blur(48px);
+    pointer-events: none;
+    will-change: transform, border-radius;
+}
+
+html::before {
+    background: var(--far-1);
+    animation:
+        far-a 80s ease-in-out infinite alternate,
+        orb-morph 31s ease-in-out infinite alternate;
+}
+
+html::after {
+    background: var(--far-2);
+    animation:
+        far-b 95s ease-in-out infinite alternate,
+        orb-morph 41s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes far-a {
+    from {
+        transform: translate3d(-22vw, -16vh, 0);
+    }
+    to {
+        transform: translate3d(12vw, 20vh, 0);
+    }
+}
+
+@keyframes far-b {
+    from {
+        transform: translate3d(24vw, 14vh, 0);
+    }
+    to {
+        transform: translate3d(-14vw, -18vh, 0);
+    }
+}
+
 /* Reduced motion: keep the orbs but make them roughly four times slower. */
 @media (prefers-reduced-motion: reduce) {
     body::before {
@@ -202,8 +247,12 @@ body::after {
         animation-duration: 120s, 44s;
     }
 
-    #root::before {
-        animation-duration: 144s, 52s;
+    html::before {
+        animation-duration: 240s, 90s;
+    }
+
+    html::after {
+        animation-duration: 280s, 110s;
     }
 }
 

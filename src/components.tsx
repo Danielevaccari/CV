@@ -168,9 +168,7 @@ export const Projects = () => (
     <Section id="projects" title="Projects">
         {projects.map(project => (
             <article key={project.title} className="entry project">
-                <span className="project__icon">
-                    <Icon name={project.icon} />
-                </span>
+                <Icon name={project.icon} />
                 <div>
                     <h3 className="entry__title">{project.title}</h3>
                     <p className="entry__text">{project.description}</p>

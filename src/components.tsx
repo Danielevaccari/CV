@@ -165,7 +165,7 @@ export const Skills = () => (
 );
 
 export const Projects = () => (
-    <Section id="projects" title="Projects">
+    <Section id="projects" title="Personal projects">
         {projects.map(project => (
             <article key={project.title} className="entry project">
                 <Icon name={project.icon} />

@@ -191,7 +191,7 @@ export const projects: ReadonlyArray<Project> = [
     {
         title: "Paradox Hedera",
         icon: "hedera",
-        description: "Personal project: a React web app built on the Hedera Consensus Service.",
+        description: "A React web app built on the Hedera Consensus Service.",
         link: { label: "Live site", href: "https://paradoxhedera.netlify.app/" },
         stack: ["React", "Hedera"],
     },

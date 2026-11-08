@@ -1,4 +1,4 @@
-import { useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 type Slot = 0 | 1;
 
@@ -44,15 +44,33 @@ const makeOrb = (slot: Slot): Orb => {
     return { id: nextId++, slot, popping: false, style: vars as CSSProperties, drops: makeDrops() };
 };
 
-/** Decorative drifting balls. Tapping one pops it and a new one drifts in. */
+// A popped ball stays gone for a while before a new one drifts in.
+const RESPAWN_MIN_MS = 6000;
+const RESPAWN_MAX_MS = 12000;
+
+/** Decorative drifting balls. Tapping one pops it; a new one drifts in after a pause. */
 export const Orbs = () => {
     const [orbs, setOrbs] = useState<Orb[]>(() => [makeOrb(0), makeOrb(1)]);
 
     const pop = (id: number) =>
         setOrbs(list => list.map(orb => (orb.id === id ? { ...orb, popping: true } : orb)));
 
-    const replace = (id: number) =>
-        setOrbs(list => list.map(orb => (orb.id === id ? makeOrb(orb.slot) : orb)));
+    const timers = useRef<number[]>([]);
+
+    useEffect(() => {
+        const pending = timers.current;
+        return () => pending.forEach(window.clearTimeout);
+    }, []);
+
+    const remove = (id: number, slot: Slot) => {
+        setOrbs(list => list.filter(orb => orb.id !== id));
+        timers.current.push(
+            window.setTimeout(
+                () => setOrbs(list => [...list, makeOrb(slot)]),
+                random(RESPAWN_MIN_MS, RESPAWN_MAX_MS)
+            )
+        );
+    };
 
     return (
         <div aria-hidden="true">
@@ -65,7 +83,7 @@ export const Orbs = () => {
                     <span
                         className="orb__body"
                         onAnimationEnd={event => {
-                            if (event.animationName === "orb-pop") replace(orb.id);
+                            if (event.animationName === "orb-pop") remove(orb.id, orb.slot);
                         }}
                     />
                     {orb.popping &&

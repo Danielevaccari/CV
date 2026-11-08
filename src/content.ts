@@ -183,14 +183,14 @@ export const projects: ReadonlyArray<Project> = [
         icon: "cube",
         description:
             "A live 3D view of Hedera mainnet: real nodes sized by stake, and every transaction at its consensus timestamp.",
-        link: { label: "Live site", href: "https://hedera-3d.netlify.app" },
+        link: { label: "View live site", href: "https://hedera-3d.netlify.app" },
         stack: ["React", "TypeScript", "three.js"],
     },
     {
         title: "Paradox Hedera",
         icon: "hedera",
         description: "A React web app built on the Hedera Consensus Service.",
-        link: { label: "Live site", href: "https://paradoxhedera.netlify.app/" },
+        link: { label: "View live site", href: "https://paradoxhedera.netlify.app/" },
         stack: ["React", "Hedera"],
     },
     {
@@ -199,7 +199,7 @@ export const projects: ReadonlyArray<Project> = [
         description:
             "A searchable rulebook for the Magic: The Gathering card game, using data from the Wizards of the Coast API.",
         link: {
-            label: "Live site",
+            label: "View live site",
             href: "https://reaktor-next-js-express-js-preassignment.vercel.app",
         },
         stack: ["React", "Next.js"],
@@ -209,7 +209,7 @@ export const projects: ReadonlyArray<Project> = [
         icon: "chart",
         description:
             "Finds the longest downward trend, the highest trading volume and the best buy/sell dates from historical Bitcoin data (CoinGecko API).",
-        link: { label: "Live site", href: "https://tender-aryabhata-fa5705.netlify.app" },
+        link: { label: "View live site", href: "https://tender-aryabhata-fa5705.netlify.app" },
         stack: ["React"],
     },
 ];

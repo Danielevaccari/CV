@@ -3,8 +3,16 @@ import { education, experience, languages, profile, projects, skillIcons, skills
 import { Icon } from "./icons";
 import { useTheme } from "./useTheme";
 
-const ExternalLink = ({ href, children }: { href: string; children: ReactNode }) => (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+const ExternalLink = ({
+    href,
+    className,
+    children,
+}: {
+    href: string;
+    className?: string;
+    children: ReactNode;
+}) => (
+    <a href={href} className={className} target="_blank" rel="noopener noreferrer">
         {children}
         <span className="visually-hidden"> (opens in a new tab)</span>
     </a>
@@ -173,15 +181,17 @@ export const Projects = () => (
                     <h3 className="entry__title">{project.title}</h3>
                     <p className="entry__text">{project.description}</p>
                     {(project.link || project.stack) && (
-                        <p className="entry__meta">
+                        <div className="project__footer">
                             {project.link && (
-                                <ExternalLink href={project.link.href}>
-                                    {project.link.label} ↗
+                                <ExternalLink href={project.link.href} className="link-button">
+                                    {project.link.label}
+                                    <span aria-hidden="true">↗</span>
                                 </ExternalLink>
                             )}
-                            {project.link && project.stack && " · "}
-                            {project.stack?.join(", ")}
-                        </p>
+                            {project.stack && (
+                                <span className="entry__meta">{project.stack.join(" · ")}</span>
+                            )}
+                        </div>
                     )}
                 </div>
             </article>

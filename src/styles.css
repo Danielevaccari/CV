@@ -23,9 +23,6 @@
             rgba(255, 255, 255, 0) 52%
         ),
         linear-gradient(160deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%);
-    --orb-1: rgba(47, 85, 212, 0.2);
-    --orb-2: rgba(14, 165, 164, 0.18);
-    --orb-3: rgba(139, 92, 246, 0.16);
     color-scheme: light;
 }
 
@@ -50,9 +47,6 @@
             rgba(255, 255, 255, 0) 52%
         ),
         linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 70%);
-    --orb-1: rgba(110, 140, 255, 0.2);
-    --orb-2: rgba(20, 184, 183, 0.18);
-    --orb-3: rgba(167, 120, 255, 0.18);
     color-scheme: dark;
 }
 
@@ -106,81 +100,83 @@
 }
 
 /*
- * Three slow, fluid orbs behind the text. They are fixed to the viewport and drift
- * around its centre, so they always sit behind some of the content. The glass
- * tags and tiles blur them.
+ * Three sharp-edged fluid shapes that drift across the page. They sit above the
+ * content with mix-blend-mode: difference, so they read as black circles on the light
+ * theme and any text they pass over inverts to stay readable. Fixed to the viewport,
+ * so some text is always behind one.
  */
 body::before,
 body::after,
 #root::before {
+    --size: min(30vmax, 260px);
     content: "";
     position: fixed;
-    z-index: -1;
+    z-index: 5;
     top: 50%;
     left: 50%;
-    width: min(46vmax, 420px);
+    width: var(--size);
     aspect-ratio: 1;
-    margin: calc(min(46vmax, 420px) / -2) 0 0 calc(min(46vmax, 420px) / -2);
+    margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+    background: #fff;
+    mix-blend-mode: difference;
     border-radius: 58% 42% 47% 53% / 52% 46% 54% 48%;
-    filter: blur(26px);
     pointer-events: none;
     will-change: transform, border-radius;
 }
 
 body::before {
-    background: var(--orb-1);
     animation:
-        orb-a 70s ease-in-out infinite alternate,
-        orb-morph 23s ease-in-out infinite alternate;
+        orb-a 24s ease-in-out infinite alternate,
+        orb-morph 9s ease-in-out infinite alternate;
 }
 
 body::after {
-    background: var(--orb-2);
+    --size: min(24vmax, 200px);
     animation:
-        orb-b 85s ease-in-out infinite alternate,
-        orb-morph 29s ease-in-out infinite alternate-reverse;
+        orb-b 30s ease-in-out infinite alternate,
+        orb-morph 11s ease-in-out infinite alternate-reverse;
 }
 
 #root::before {
-    background: var(--orb-3);
+    --size: min(18vmax, 150px);
     animation:
-        orb-c 100s ease-in-out infinite alternate,
-        orb-morph 37s ease-in-out infinite alternate;
+        orb-c 36s ease-in-out infinite alternate,
+        orb-morph 13s ease-in-out infinite alternate;
 }
 
 @keyframes orb-a {
     0% {
-        transform: translate3d(-22vw, -26vh, 0);
+        transform: translate3d(-30vw, -30vh, 0);
     }
     50% {
-        transform: translate3d(8vw, 6vh, 0);
+        transform: translate3d(14vw, 10vh, 0);
     }
     100% {
-        transform: translate3d(-12vw, 28vh, 0);
+        transform: translate3d(-8vw, 34vh, 0);
     }
 }
 
 @keyframes orb-b {
     0% {
-        transform: translate3d(24vw, -10vh, 0);
+        transform: translate3d(32vw, -14vh, 0);
     }
     50% {
-        transform: translate3d(-6vw, 24vh, 0);
+        transform: translate3d(-12vw, 28vh, 0);
     }
     100% {
-        transform: translate3d(18vw, 26vh, 0);
+        transform: translate3d(22vw, 32vh, 0);
     }
 }
 
 @keyframes orb-c {
     0% {
-        transform: translate3d(-4vw, 28vh, 0);
+        transform: translate3d(-6vw, 34vh, 0);
     }
     50% {
-        transform: translate3d(14vw, -22vh, 0);
+        transform: translate3d(20vw, -28vh, 0);
     }
     100% {
-        transform: translate3d(-20vw, -4vh, 0);
+        transform: translate3d(-28vw, -2vh, 0);
     }
 }
 
@@ -189,18 +185,25 @@ body::after {
         border-radius: 58% 42% 47% 53% / 52% 46% 54% 48%;
     }
     50% {
-        border-radius: 44% 56% 58% 42% / 56% 44% 50% 50%;
+        border-radius: 42% 58% 60% 40% / 58% 42% 50% 50%;
     }
     100% {
-        border-radius: 52% 48% 40% 60% / 45% 58% 42% 55%;
+        border-radius: 52% 48% 38% 62% / 44% 60% 40% 56%;
     }
 }
 
+/* Reduced motion: keep the orbs but make them roughly four times slower. */
 @media (prefers-reduced-motion: reduce) {
-    body::before,
-    body::after,
+    body::before {
+        animation-duration: 96s, 36s;
+    }
+
+    body::after {
+        animation-duration: 120s, 44s;
+    }
+
     #root::before {
-        animation: none;
+        animation-duration: 144s, 52s;
     }
 }
 

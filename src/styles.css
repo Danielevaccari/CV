@@ -9,25 +9,23 @@
     /* Glass material (opaque fallback first; translucent version in @supports below). */
     --glass-bg: #f1f1ef;
     --glass-bg-hover: #ebebe8;
-    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.25);
     --glass-border-hover: rgba(47, 85, 212, 0.35);
-    --glass-highlight: rgba(255, 255, 255, 0.6);
+    --glass-highlight: rgba(255, 255, 255, 0.3);
     --glass-shadow:
-        inset 0 -1px 0 rgba(28, 28, 30, 0.035), 0 2px 5px rgba(30, 40, 90, 0.06),
-        0 0 0 1px rgba(28, 28, 30, 0.05);
+        inset 0 -1px 0 rgba(28, 28, 30, 0.02), 0 1px 3px rgba(30, 40, 90, 0.04),
+        0 0 0 1px rgba(28, 28, 30, 0.04);
     --glass-sheen:
         linear-gradient(
             180deg,
-            rgba(255, 255, 255, 0.25) 0%,
-            rgba(255, 255, 255, 0.05) 50%,
+            rgba(255, 255, 255, 0.12) 0%,
+            rgba(255, 255, 255, 0.025) 50%,
             rgba(255, 255, 255, 0) 52%
         ),
-        linear-gradient(160deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0) 70%);
+        linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 70%);
     /* Near shapes: with a difference blend these become deep ink colours on the light page. */
     --orb-1: #efe9d8;
     --orb-2: #f2e6e6;
-    --far-1: rgba(47, 85, 212, 0.14);
-    --far-2: rgba(14, 165, 164, 0.12);
     color-scheme: light;
 }
 
@@ -40,41 +38,39 @@
 
     --glass-bg: #1c1c20;
     --glass-bg-hover: #232329;
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.05);
     --glass-border-hover: rgba(142, 168, 255, 0.45);
-    --glass-highlight: rgba(255, 255, 255, 0.14);
-    --glass-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.18), 0 2px 7px rgba(0, 0, 0, 0.2);
+    --glass-highlight: rgba(255, 255, 255, 0.07);
+    --glass-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.09), 0 1px 4px rgba(0, 0, 0, 0.1);
     --glass-sheen:
         linear-gradient(
             180deg,
-            rgba(255, 255, 255, 0.11) 0%,
-            rgba(255, 255, 255, 0.03) 50%,
+            rgba(255, 255, 255, 0.055) 0%,
+            rgba(255, 255, 255, 0.015) 50%,
             rgba(255, 255, 255, 0) 52%
         ),
-        linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 70%);
+        linear-gradient(160deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0) 70%);
     /* On the dark page the same blend gives pale tints with dark text. */
     --orb-1: #dae9ff;
     --orb-2: #c8f2ee;
-    --far-1: rgba(110, 140, 255, 0.2);
-    --far-2: rgba(20, 184, 183, 0.16);
     color-scheme: dark;
 }
 
 /* Glass supported: translucent surfaces that let the soft background show through. */
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
     :root {
-        --glass-bg: rgba(255, 255, 255, 0.05);
-        --glass-bg-hover: rgba(255, 255, 255, 0.16);
+        --glass-bg: rgba(255, 255, 255, 0.025);
+        --glass-bg-hover: rgba(255, 255, 255, 0.08);
     }
 
     :root[data-theme="dark"] {
-        --glass-bg: rgba(255, 255, 255, 0.02);
-        --glass-bg-hover: rgba(255, 255, 255, 0.05);
+        --glass-bg: rgba(255, 255, 255, 0.01);
+        --glass-bg-hover: rgba(255, 255, 255, 0.03);
     }
 
     .glass {
-        -webkit-backdrop-filter: blur(12px) saturate(140%);
-        backdrop-filter: blur(12px) saturate(140%);
+        -webkit-backdrop-filter: blur(8px) saturate(120%);
+        backdrop-filter: blur(8px) saturate(120%);
     }
 }
 
@@ -183,60 +179,6 @@ body::after {
     }
 }
 
-/*
- * Far layer: two large, slow, soft shapes behind the text. The glass tags and tiles
- * frost them, and being bigger, blurrier and slower than the sharp shapes they read
- * as further away.
- */
-html::before,
-html::after {
-    --size: min(70vmax, 640px);
-    content: "";
-    position: fixed;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    width: var(--size);
-    aspect-ratio: 1;
-    margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
-    border-radius: 55% 45% 50% 50% / 48% 54% 46% 52%;
-    filter: blur(48px);
-    pointer-events: none;
-    will-change: transform, border-radius;
-}
-
-html::before {
-    background: var(--far-1);
-    animation:
-        far-a 80s ease-in-out infinite alternate,
-        orb-morph 31s ease-in-out infinite alternate;
-}
-
-html::after {
-    background: var(--far-2);
-    animation:
-        far-b 95s ease-in-out infinite alternate,
-        orb-morph 41s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes far-a {
-    from {
-        transform: translate3d(-22vw, -16vh, 0);
-    }
-    to {
-        transform: translate3d(12vw, 20vh, 0);
-    }
-}
-
-@keyframes far-b {
-    from {
-        transform: translate3d(24vw, 14vh, 0);
-    }
-    to {
-        transform: translate3d(-14vw, -18vh, 0);
-    }
-}
-
 /* Reduced motion: keep the orbs but make them roughly four times slower. */
 @media (prefers-reduced-motion: reduce) {
     body::before {
@@ -245,14 +187,6 @@ html::after {
 
     body::after {
         animation-duration: 120s, 44s;
-    }
-
-    html::before {
-        animation-duration: 240s, 90s;
-    }
-
-    html::after {
-        animation-duration: 280s, 110s;
     }
 }
 

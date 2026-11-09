@@ -209,7 +209,7 @@ export const projects: ReadonlyArray<Project> = [
         icon: "chart",
         description:
             "Finds the longest downward trend, the highest trading volume and the best buy/sell dates from historical Bitcoin data (CoinGecko API).",
-        link: { label: "View live site", href: "https://tender-aryabhata-fa5705.netlify.app" },
+        link: { label: "View live site", href: "https://cryptowindow.netlify.app" },
         stack: ["React"],
     },
 ];

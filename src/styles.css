@@ -330,8 +330,6 @@ a:hover {
     width: 14px;
     height: 14px;
     object-fit: contain;
-    /* E-ink is monochrome. */
-    filter: grayscale(1) contrast(1.8) brightness(0.7);
 }
 
 /* A very long tag (e.g. the integrations one) may wrap inside its pill on phones. */
@@ -342,10 +340,6 @@ a:hover {
 }
 
 /* Black single-colour icons would vanish on the dark background. */
-:root[data-theme="dark"] .tag__icon {
-    filter: grayscale(1) brightness(2.2);
-}
-
 :root[data-theme="dark"] .tag__icon--mono {
     filter: invert(1);
 }
@@ -364,7 +358,10 @@ a:hover {
     width: 44px;
     height: 44px;
     border-radius: 4px;
-    color: var(--text);
+    /* Flat matte tint of each project's own colour. */
+    background: color-mix(in srgb, var(--tone) 12%, transparent);
+    border-color: color-mix(in srgb, var(--tone) 40%, var(--rule));
+    color: var(--tone);
 }
 
 .icon {

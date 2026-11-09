@@ -65,7 +65,7 @@ export type Education = {
 };
 
 export const profile = {
-    label: "CV & Portfolio",
+    label: "Portfolio",
     name: "Daniele Johannes Vaccari",
     role: "Full-Stack Web Developer",
     focus: "Agentic AI Development · Production Planning & Execution Systems (APS / MES)",

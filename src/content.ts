@@ -74,11 +74,6 @@ export const profile = {
     links: [{ label: "GitHub", href: "https://github.com/Danielevaccari" }] as ReadonlyArray<Link>,
 };
 
-export const siteNote = {
-    text: "This site is a project too: built with React and TypeScript.",
-    link: { label: "Source on GitHub", href: "https://github.com/Danielevaccari/CV" } as Link,
-};
-
 export const experience: ReadonlyArray<Job> = [
     {
         role: "Software Developer",

@@ -1,14 +1,5 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import {
-    education,
-    experience,
-    languages,
-    profile,
-    projects,
-    siteNote,
-    skillIcons,
-    skills,
-} from "./content";
+import { education, experience, languages, profile, projects, skillIcons, skills } from "./content";
 import { Icon } from "./icons";
 import { useTheme } from "./useTheme";
 
@@ -251,12 +242,6 @@ export const EducationAndLanguages = () => (
 
 export const Footer = () => (
     <footer className="footer">
-        <p>
-            {siteNote.text}{" "}
-            <ExternalLink href={siteNote.link.href}>{siteNote.link.label} ↗</ExternalLink>
-        </p>
-        <p>
-            © {new Date().getFullYear()} {profile.name}
-        </p>
+        © {new Date().getFullYear()} {profile.name}
     </footer>
 );

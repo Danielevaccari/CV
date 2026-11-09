@@ -142,6 +142,16 @@ a:hover {
     margin-bottom: clamp(24px, 5vw, 36px);
 }
 
+.intro__label {
+    margin-bottom: 6px;
+    padding-right: 44px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
 .intro__name {
     /* Leave room for the theme toggle in the top-right corner. */
     padding-right: 44px;

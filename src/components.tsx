@@ -1,5 +1,14 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import { education, experience, languages, profile, projects, skillIcons, skills } from "./content";
+import {
+    education,
+    experience,
+    languages,
+    profile,
+    projects,
+    siteNote,
+    skillIcons,
+    skills,
+} from "./content";
 import { Icon } from "./icons";
 import { useTheme } from "./useTheme";
 
@@ -97,6 +106,7 @@ export const ThemeToggle = () => {
 
 export const Intro = () => (
     <header className="intro">
+        <p className="intro__label">{profile.label}</p>
         <h1 className="intro__name">{profile.name}</h1>
         <p className="intro__role">
             {profile.role}
@@ -241,6 +251,12 @@ export const EducationAndLanguages = () => (
 
 export const Footer = () => (
     <footer className="footer">
-        © {new Date().getFullYear()} {profile.name}
+        <p>
+            {siteNote.text}{" "}
+            <ExternalLink href={siteNote.link.href}>{siteNote.link.label} ↗</ExternalLink>
+        </p>
+        <p>
+            © {new Date().getFullYear()} {profile.name}
+        </p>
     </footer>
 );

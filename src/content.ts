@@ -65,12 +65,18 @@ export type Education = {
 };
 
 export const profile = {
+    label: "CV & Portfolio",
     name: "Daniele Johannes Vaccari",
     role: "Full-Stack Web Developer",
     focus: "Agentic AI Development · Production Planning & Execution Systems (APS / MES)",
     summary:
         "Full-stack web developer (**.NET / React**) with **4.5+ years** building production planning (APS) and manufacturing execution (MES) systems for **forest and food industry** manufacturers, in teams of 4–8. I own features from the first build through acceptance testing and go-live to production support. I have used AI in development daily since 2022 and now focus on **agentic coding**: a **Claude Code harness** and **MCP endpoints** that let AI agents work directly with the application.",
     links: [{ label: "GitHub", href: "https://github.com/Danielevaccari" }] as ReadonlyArray<Link>,
+};
+
+export const siteNote = {
+    text: "This site is a project too: built with React and TypeScript.",
+    link: { label: "Source on GitHub", href: "https://github.com/Danielevaccari/CV" } as Link,
 };
 
 export const experience: ReadonlyArray<Job> = [

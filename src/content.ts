@@ -168,7 +168,6 @@ export const skills: ReadonlyArray<SkillGroup> = [
             "APS",
             "MES",
             "MRP",
-            "Load levelling",
             "Capacity planning",
             "Traceability",
             "ERP (SAP) and custom customer integrations",

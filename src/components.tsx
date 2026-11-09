@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { education, experience, languages, profile, projects, skillIcons, skills } from "./content";
 import { Icon } from "./icons";
 import { useTheme } from "./useTheme";
@@ -38,38 +38,6 @@ const Section = ({ id, title, children }: { id: string; title: string; children:
         <div className="section__body">{children}</div>
     </section>
 );
-
-/** Thin bar at the top of the page showing how far the visitor has scrolled. */
-export const ScrollProgress = () => {
-    const barRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        let frame = 0;
-
-        const update = () => {
-            frame = 0;
-            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-            const scrollable = scrollHeight - clientHeight;
-            const progress = scrollable > 0 ? scrollTop / scrollable : 0;
-            barRef.current?.style.setProperty("--progress", progress.toString());
-        };
-
-        const schedule = () => {
-            if (!frame) frame = requestAnimationFrame(update);
-        };
-
-        update();
-        window.addEventListener("scroll", schedule, { passive: true });
-        window.addEventListener("resize", schedule);
-        return () => {
-            cancelAnimationFrame(frame);
-            window.removeEventListener("scroll", schedule);
-            window.removeEventListener("resize", schedule);
-        };
-    }, []);
-
-    return <div ref={barRef} className="scroll-progress" aria-hidden="true" />;
-};
 
 export const ThemeToggle = () => {
     const { theme, toggleTheme } = useTheme();

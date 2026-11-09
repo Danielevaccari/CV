@@ -4,14 +4,12 @@ import {
     Footer,
     Intro,
     Projects,
-    ScrollProgress,
     Skills,
     ThemeToggle,
 } from "./components";
 
 const App = () => (
     <div className="page">
-        <ScrollProgress />
         <ThemeToggle />
         <main>
             <Intro />

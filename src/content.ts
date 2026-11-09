@@ -205,12 +205,12 @@ export const projects: ReadonlyArray<Project> = [
         stack: ["React", "Next.js"],
     },
     {
-        title: "Bitcoin Trend Analyzer",
+        title: "Crypto Analyzer",
         icon: "chart",
         description:
-            "Finds the longest downward trend, the highest trading volume and the best buy/sell dates from historical Bitcoin data (CoinGecko API).",
+            "Live crypto markets from Coinbase and Binance: candlestick charts, order books, trend analysis and coin comparison.",
         link: { label: "View live site", href: "https://cryptowindow.netlify.app" },
-        stack: ["React"],
+        stack: ["React", "TypeScript"],
     },
 ];
 

@@ -95,7 +95,7 @@ export const experience: ReadonlyArray<Job> = [
                 items: [
                     {
                         title: "LVL mill MES",
-                        detail: "Build to go-live: billets, sawing, custom SAP integration",
+                        detail: "Build to go-live: billets, sawing, SAP integration",
                     },
                     {
                         title: "Long-term planning",
@@ -111,7 +111,7 @@ export const experience: ReadonlyArray<Job> = [
                     },
                     {
                         title: "Customer integrations",
-                        detail: "Custom integrations with customer systems such as SAP, plus a standardized calendar integration",
+                        detail: "Custom SAP and calendar integrations",
                     },
                 ],
             },

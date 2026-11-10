@@ -164,7 +164,9 @@ export const Projects = () => (
                             {project.link && (
                                 <ExternalLink href={project.link.href} className="link-button">
                                     {project.link.label}
-                                    <span aria-hidden="true">↗</span>
+                                    <span className="link-button__arrow" aria-hidden="true">
+                                        ↗
+                                    </span>
                                 </ExternalLink>
                             )}
                             {project.stack && (

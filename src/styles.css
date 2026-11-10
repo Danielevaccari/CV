@@ -419,14 +419,47 @@ a:hover {
     background: var(--text);
     color: var(--bg);
     font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
     text-decoration: none;
+    /* A flat offset "paper" shadow under the ink button. */
+    box-shadow: 3px 3px 0 var(--rule);
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease,
+        color 0.15s ease;
 }
 
-/* Like an e-ink page refresh: the colours swap. */
+.link-button__arrow {
+    display: inline-block;
+    transition: transform 0.15s ease;
+}
+
+/* Like an e-ink page refresh: the colours swap, the button lifts into its shadow
+   and the arrow points further out. */
 .link-button:hover {
     background: transparent;
     color: var(--text);
     text-decoration: none;
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--text);
+}
+
+.link-button:hover .link-button__arrow {
+    transform: translate(2px, -2px);
+}
+
+.link-button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .link-button,
+    .link-button__arrow {
+        transition: none;
+    }
 }
 
 /* ---------- Footer ---------- */

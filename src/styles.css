@@ -284,6 +284,9 @@ a:hover {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
 }
 
 /* Achievement rows: bold label + one-line detail. Stacked on phones. */

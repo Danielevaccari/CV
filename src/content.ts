@@ -109,6 +109,10 @@ export const experience: ReadonlyArray<Job> = [
                         title: "Sawmill MES",
                         detail: "Multi-mill rollout: kiln/storage maps, quality",
                     },
+                    {
+                        title: "Customer integrations",
+                        detail: "Custom integrations with customer systems such as SAP, plus a standardized calendar integration",
+                    },
                 ],
             },
         ],
